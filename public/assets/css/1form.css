@@ -1,0 +1,350 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color:white;
+  }
+  
+  #regForm {
+    background-color: #ffffff;
+    margin: 100px auto;
+    font-family: Raleway;
+    padding: 40px;
+    width: 70%;
+    min-width: 300px;
+  }
+  
+  h1 {
+    text-align: center;  
+  }
+  
+  input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+    margin:10px;
+  
+  }
+  
+  /* Mark input boxes that gets an error on validation: */
+  input.invalid {
+    background-color: #ffdddd;
+  }
+  
+  /* Hide all steps by default: */
+  .tab {
+    display: none;
+  }
+  .progress {
+    height: 35px;
+  
+  }
+  .progress .skill {
+    font: normal 12px "Open Sans Web";
+    line-height: 35px;
+    padding: 0;
+    margin: 0 0 0 20px;
+    text-transform: uppercase;
+  }
+  .progress .skill .val {
+    float: right;
+    font-style: normal;
+    margin: 0 20px 0 0;
+  }
+  
+  .progress-bar {
+    text-align: left;
+    transition-duration: 3s;
+  }
+  
+  button {
+    background-color: #356e96;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-family: Raleway;
+    cursor: pointer;
+    border-radius:20px;
+    margin-top:10px;
+  }
+  * {
+      margin: 0;
+      padding: 0
+  }
+  
+  html {
+      height: 100%
+  }
+  
+  p {
+      color: grey
+  }
+  
+  #heading {
+      text-transform: uppercase;
+      color: #356e96;
+      font-weight: normal
+  }
+  
+  #msform {
+      text-align: center;
+      position: relative;
+      margin-top: 20px
+      padding:20px;
+  }
+  
+  #msform fieldset {
+      background: white;
+      border: 0 none;
+      border-radius: 0.5rem;
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0;
+      padding-bottom: 20px;
+      position: relative
+  }
+  
+  .form-card {
+      text-align: left
+  }
+  
+  #msform fieldset:not(:first-of-type) {
+      display: none
+  }
+  
+  #msform input,
+  #msform textarea {
+      padding: 8px 15px 8px 15px;
+      border: 1px solid #ccc;
+      border-radius: 0px;
+      margin-bottom: 25px;
+      margin-top: 2px;
+      width: 100%;
+      box-sizing: border-box;
+      font-family: montserrat;
+      color: #2C3E50;
+      background-color: #ECEFF1;
+      font-size: 16px;
+      letter-spacing: 1px
+  }
+  
+  #msform input:focus,
+  #msform textarea:focus {
+      -moz-box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+      border: 1px solid #356e96;
+      outline-width: 0
+  }
+  
+  #msform .action-button {
+      width: 100px;
+      background: #356e96;
+      font-weight: bold;
+      color: white;
+      border: 0 none;
+      border-radius: 0px;
+      cursor: pointer;
+      padding: 10px 5px;
+      margin: 10px 0px 10px 5px;
+      float: right
+  }
+  
+  #msform .action-button:hover,
+  #msform .action-button:focus {
+      background-color: #311B92
+  }
+  
+  #msform .action-button-previous {
+      width: 100px;
+      background: #616161;
+      font-weight: bold;
+      color: white;
+      border: 0 none;
+      border-radius: 0px;
+      cursor: pointer;
+      padding: 10px 5px;
+      margin: 10px 5px 10px 0px;
+      float: right
+  }
+  
+  #msform .action-button-previous:hover,
+  #msform .action-button-previous:focus {
+      background-color: #000000
+  }
+  
+  .card {
+      z-index: 0;
+      border:solid,#ddd,1px;
+      position: relative
+      padding:15px;
+  }
+  
+  .fs-title {
+      font-size: 25px;
+      color: #356e96;
+      margin-bottom: 15px;
+      font-weight: normal;
+      text-align: left
+  }
+  
+  .purple-text {
+      color: #356e96;
+      font-weight: normal
+  }
+  
+  .steps {
+      font-size: 25px;
+      color: gray;
+      margin-bottom: 10px;
+      font-weight: normal;
+      text-align: right
+  }
+  
+  .fieldlabels {
+      color: gray;
+      text-align: left
+  }
+  
+  #progressbar {
+      margin-bottom: 30px;
+      overflow: hidden;
+      color: lightgrey
+  }
+  
+  #progressbar .active {
+      color: #356e96
+  }
+  
+  #progressbar li {
+      list-style-type: none;
+      font-size: 15px;
+      width: 25%;
+      float: left;
+      position: relative;
+      font-weight: 400
+  }
+  
+  #progressbar #account:before {
+      font-family: FontAwesome;
+      content: "\f13e"
+  }
+  
+  #progressbar #personal:before {
+      font-family: FontAwesome;
+      content: "\f007"
+  }
+  
+  #progressbar #payment:before {
+      font-family: FontAwesome;
+      content: "\f030"
+  }
+  
+  
+  #progressbar #confirm:before {
+      font-family: FontAwesome;
+      content: "\f00c"
+  }
+  
+  #progressbar li:before {
+      width: 50px;
+      height: 50px;
+      line-height: 45px;
+      display: block;
+      font-size: 20px;
+      color: #ffffff;
+      background: lightgray;
+      border-radius: 50%;
+      margin: 0 auto 10px auto;
+      padding: 2px
+  }
+  
+  #progressbar li:after {
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: lightgray;
+      position: absolute;
+      left: 0;
+      top: 25px;
+      z-index: -1
+  }
+  
+  #progressbar li.active:before,
+  #progressbar li.active:after {
+      background: #356e96
+  }
+  
+  .progress {
+      height: 20px
+  }
+  
+  .progress-bar {
+      background-color: #356e96
+  }
+  
+  .fit-image {
+      width: 100%;
+      object-fit: cover
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  .progress{
+  width: 80%;
+  border-radius:15px;
+  
+  }
+  .card px-0 pt-4 pb-0 mt-3 mb-3{
+    padding:10px
+    ;
+  }
+  button.btn.btn-primary.dropdown-toggle {
+      width: 80%;
+      border-radius:15px;
+  
+  }
+  
+  #prevBtn {
+    background-color: #bbbbbb;
+  }
+  
+  /* Make circles that indicate the steps of the form: */
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;  
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  .congrats{
+      background-color:#7d16fa;
+      color:white;
+      text-align:center;
+  }
+  .form{
+    border:#ddd,solid,1px;
+    padding: 20px;
+  
+  }
+  .pt-4{
+    padding:1.5rem;
+  }
+  
+  
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: #356e96;
+  }

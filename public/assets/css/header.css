@@ -1,0 +1,55 @@
+#header {
+    background-color:#4fa527;
+}
+
+.list-group-item {
+    background-color:#4fa527;
+    border: none;
+    color:#ffffff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color:#ffffff;
+}
+.special {
+    display: inline;
+}
+
+.btn-confirm {
+    color: #fff;
+    background-color: #84c068;
+    border-color: #84c068;
+}
+
+.button-container form,
+.button-container form div {
+    display: inline;
+}
+
+.button-container button {
+    display: inline;
+    vertical-align: middle;
+}
+
+article
+{
+    width: 70%;
+    margin-top:10px;
+}
+
+
+.thumbnail{
+
+    height: 100px;
+    margin: 10px; 
+    float: left;
+}
+#clear{
+   display:none;
+}
+#result {
+    border: 4px dotted #cccccc;
+    display: none;
+    margin:0 auto;
+    width: 511px;
+}

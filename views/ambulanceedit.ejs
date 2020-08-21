@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Online Multi Doctor Appointment Management</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpg" src="/assets/images/icon.jpg">
+
+     <!-- Stylesheets -->
+     <link rel="stylesheet" href="/assets/lib/css/bootstrap.min.css">
+     <link rel="stylesheet" href="/assets/lib/css/fontawesome.min.css">
+     <link rel="stylesheet" href="/assets/lib/css/responsive.css">
+     <link rel="stylesheet" href="/assets/lib/css/select2.min.css">
+     <link rel="stylesheet" href="/assets/lib/css/spacing.css">
+     <link rel="stylesheet" href="/assets/lib/css/style.css">
+     <link rel="stylesheet" href="/assets/lib/css/owl.carousel.min.css">
+     <link rel="stylesheet" href="/assets/lib/css/animate.css">
+     <link rel="stylesheet" href="/assets/lib/css/bootstrap-datepicker.min.css">
+     <link rel="stylesheet" href="/assets/lib/css/magnific-popup.css">
+     <link rel="stylesheet" href="/assets/css/header.css">
+
+</head>
+
+<body onLoad="typeWriter()">
+    <!--Header Start-->
+    <nav class="navbar navbar-expand-md navbar-light" id = "header">
+        <img src="/assets/images/appointment.jpg" width="100" height="100" alt="logo">
+        <ul class="list-group list-group-horizontal-sm">
+            <li class="list-group-item">
+                <i class="fa fa-envelope"></i>
+                <span>info@yourwebsite.com</span>
+            </li>
+            <li class="list-group-item">
+                <i class="fa fa-phone"></i>
+                <span>xxx-xxx-xxxx</span>
+            </li>  
+        </ul>    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">ABOUT US</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    PATIENT
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <% if (data.user == undefined ){  %>
+                            <a class="dropdown-item" href="/patientregistration">REGISTRATION</a>
+                            <a class="dropdown-item" href="/patientlogin">LOGIN</a>                                                                   
+                      <% } else if(data.user.usertype == "patient") {  %>
+                        <a class="dropdown-item" href="/patienthome">PATIENT HOME</a>   
+                        <a class="dropdown-item" href="/logout">LOGOUT</a> 
+                        <% } else {  %>     
+                            <a class="dropdown-item" href="/patientregistration">REGISTRATION</a>
+                            <a class="dropdown-item" href="/patientlogin">LOGIN</a>                                           
+                        <% } %>   
+                    </div>                 
+                    
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    DOCTOR
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <% if (data.user == undefined){  %>
+                            <a class="dropdown-item" href="/doctorregistration">REGISTRATION</a>
+                            <a class="dropdown-item" href="/doctorlogin">LOGIN</a>
+                            <% } else if(data.user.usertype == "doctor") {  %>
+                                <a class="dropdown-item" href="/doctorhome">DOCTOR HOME</a>   
+                                <a class="dropdown-item" href="/logout">LOGOUT</a>  
+                            <% } else {  %>
+                            <a class="dropdown-item" href="/doctorregistration">REGISTRATION</a>
+                            <a class="dropdown-item" href="/doctorlogin">LOGIN</a> 
+                        <% } %>
+                    </div>                   
+                    
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    AMBULANCE SERVICE
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <% if (data.user == undefined){  %>
+                            <a class="dropdown-item" href="/ambulanceregistration">REGISTRATION </a>
+                            <a class="dropdown-item" href="/ambulancelogin">LOGIN</a>
+                            <% } else if(data.user.usertype == "AmbulanceProvider" ) {  %>
+                            <a class="dropdown-item" href="/ambulancehome">AMBULANCE SERVICE HOME</a>   
+                            <a class="dropdown-item" href="/logout">LOGOUT</a> 
+                            <% } else {  %>
+                                <a class="dropdown-item" href="/ambulanceregistration">REGISTRATION </a>
+                                <a class="dropdown-item" href="/ambulancelogin">LOGIN</a>                      
+                        <% } %>
+                    </div> 
+                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/faq">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/services">SERVICES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/gallery">GALLERY</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/news">NEWS</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--Header End-->
+    <br>
+
+    <!--Banner Start-->
+    <div class="banner-slider" style="background-image: url(/assets/images/banner.jpg)">
+    <div class="bg"></div>
+    <div class="bannder-table">
+        <div class="banner-text">
+            <h1 id="typeit"> </h1>
+        </div>
+    </div>
+</div>
+<!--Banner End-->
+
+<div class="contact-area pt_60 pb_90">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="contact-form headstyle user-login-tab pt_0">  
+                    <ul class="nav nav-tabs mt_15" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#" role="tab">Ambulance Credentials Update</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="patientRegistration" role="tabpanel">
+                            <form action="/ambulancehome/<%= data.user._id %>/edit?_method=put" method="POST" accept-charset="utf-8">                                                                                                     
+                                <div class="form-row row mt_20">
+                                    <div class="form-group col-12">
+                                    <p>Name</p>
+                                        <input type="text" class="form-control" placeholder="Name" name="name" autocomplete="off" required value="<%= data.ambulance.name %>">
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <div class="mb-3">
+                                            <p>
+                                                Please enter your address in the textarea
+                                            </p>
+                                            <textarea class="form-control" id="address" placeholder="Address" name="address" autocomplete="off" required ><%= data.ambulance.address %></textarea>
+                                            
+                                          </div>
+                                    </div>
+                                    <div class="form-group col-12">
+                                      <label for="phonenum">Phone Number</label><br/>
+                                        <input id="phonenum" type="tel" class="form-control" placeholder="Phone Number (format:+91'xxxxxxxxxx')" name="phone" pattern="^\d{10}$" minlength="10" autocomplete="off" required value="<%= data.ambulance.phone %>">
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <p>Email Address</p>
+                                        <input type="email" class="form-control" placeholder="Email Address" name="username" autocomplete="off" required value="<%= data.ambulance.username %>">
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <p>Vehicle Number</p>
+                                            <input type="text" class="form-control" placeholder="Vehicle Number" name="vehiclenumber" autocomplete="off" required value="<%= data.ambulance.vehiclenumber %>">
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <button type="submit" class="btn" name="form_registration">Update</button>
+                                    </div>
+                                </div>
+                            </form>                       
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>     
+
+
+<!--Call Start-->
+    <div class="call-us" style="background-image: url(/assets/images/background.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-8 col-12">
+                    <div class="call-text">
+                        <h3>Now getting an appointment in any hospital has become online & easy!?</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                    <div class="button">
+                        <a href="/patientregistration"> Book Appointment Now <i class="fa fa-chevron-circle-right"></i></a>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Call End-->
+
+    <!-- Address -->
+
+<div class="feature-area feature-two bg-area pt_90 pb_90">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="headline">
+                    <h4>Address</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <br>
+                            <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+                        </div>
+                        <div class="feature-text">
+                            <p>
+                                3153 Foley Street<br>
+                                Miami, FL 33176                           
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <br>
+                            <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+                        </div>
+                        <div class="feature-text">
+                            <p>
+                                Sales: xxx-xxx-xxxx<br>
+                                Support: 963-612-1782                              
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <br>
+                            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                        </div>
+                        <div class="feature-text">
+                            <p>
+                                sales@yourwebsite.com<br>
+                                support@yourwebsite.com                            
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="aman">
+                            <div class="footer-item">
+                                <ul class="footer-social">
+                                    <li><a href="http://www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="http://www.twitter.com"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="http://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="http://www.pinterest.com"><i class="fab fa-pinterest"></i></a></li>
+                                    <li><a href="http://www.youtube.com"><i class="fab fa-youtube"></i></a></li>                        
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+    <!--Footer-Area Start-->
+    
+    <div class="footer-bottom pt_50 pb_50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/terms">Terms and Conditions</a></li>
+                            <li><a href="/privacypolicy">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="copy-text">
+                        <p>
+                            Copyright © 2020 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-Area End-->
+
+    <!--Scroll-Top-->
+    <div class="scroll-top" onclick="topFunction()" >
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <!--Scroll-Top-->
+    
+    <script>
+        var i = 0;
+        var txt = 'WELCOME TO STARTUP NAME';
+        var speed = 60;
+        
+        function typeWriter() {
+          if (i < txt.length) {
+            document.getElementById("typeit").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+    </script>
+
+</body>
+
+<!-- JavaScript -->
+<script type="text/javascript" src="/assets/lib/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/assets/lib/js/popper.min.js"></script>
+<script type="text/javascript" src="/assets/lib/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="/assets/lib/js/all.min.js"></script>
+<script type="text/javascript" src="/assets/lib/js/select2.full.min.js"></script>
+<script type="text/javascript" src="/assets/js/about.js"></script>
+
+</html>
