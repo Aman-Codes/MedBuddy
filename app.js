@@ -9,14 +9,15 @@ const localStrategy         = require('passport-local'),
     Doctor                  = require("./models/doctor"),
     AmbulanceRegistration   = require("./models/ambulanceregistration"),    
     IndexRoutes             = require("./routes/index"),
-    PatientRoutes             = require("./routes/patient"),
-    DoctorRoutes             = require("./routes/doctor"),
-    AmbulanceRoutes             = require("./routes/ambulance"),      
-    compression             = require('compression');
+    PatientRoutes           = require("./routes/patient"),
+    DoctorRoutes            = require("./routes/doctor"),
+    AmbulanceRoutes         = require("./routes/ambulance"),      
+    compression             = require('compression'),
+    mongourl                = require('../config/keys').mongourl;
 
 app.use(compression());
 
-mongoose.connect("mongodb+srv://admin:admin@cluster0-dpngo.mongodb.net/test?retryWrites=true&w=majority",{
+mongoose.connect(mongourl,{
     useUnifiedTopology: true,useNewUrlParser:true , 
     useFindAndModify: false
 });
