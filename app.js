@@ -13,7 +13,7 @@ const localStrategy         = require('passport-local'),
     DoctorRoutes            = require("./routes/doctor"),
     AmbulanceRoutes         = require("./routes/ambulance"),      
     compression             = require('compression'),
-    mongourl                = require('../config/keys').mongourl;
+    mongourl                = require('./config/keys').mongourl;
 
 app.use(compression());
 
