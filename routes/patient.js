@@ -16,7 +16,8 @@ var router = express.Router({mergeParams: true});
 //==================== USEFULL FUNCTIONS ====================
 
 function ConvertChosenTime(str) {
-	let date0 = new Date(`${str}`),
+    var msec = Date.parse(str);
+	let date0 = new Date(msec),
 	hour = date0.getHours(),
 	minutes = date0.getMinutes(),
 	end = "AM";
@@ -28,7 +29,8 @@ function ConvertChosenTime(str) {
 	return (JoinedTime + " " + end);
 }
 function convert(str) {
-	var date = new Date(`${str}`),
+    var msec = Date.parse(str);
+	var date = new Date(msec),
 	mnth = ("0" + (date.getMonth() + 1)).slice(-2),
 	day = ("0" + date.getDate()).slice(-2);
 	//     return [date.getFullYear(), mnth, day].join("-");
@@ -81,7 +83,7 @@ router.get("/patienthome", isLoggedIn,function(req,res){
 			obj.DoctorId = item.DoctorId;
 			obj.PrescriptionId = item.PrescriptionId;
 			obj.AppointmentDate = convert(item.AppointmentDate);
-            obj.AppointmentTime = ConvertChosenTime(item.AppointmentDate);
+            obj.AppointmentTime =  date1.toLocaleTimeString(); //ConvertChosenTime(item.AppointmentDate);
             obj.Time = item.AppointmentDate;
 			obj.Disease = item.Disease;
 			obj.Status = item.Status;
