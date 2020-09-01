@@ -16,6 +16,7 @@ var router = express.Router({mergeParams: true});
 //==================== USEFULL FUNCTIONS ====================
 
 function ConvertChosenTime(str) {
+    str = String(str);
 	let date0 = new Date(str),
 	hour = date0.getHours(),
 	minutes = date0.getMinutes(),
@@ -28,6 +29,7 @@ function ConvertChosenTime(str) {
 	return (JoinedTime + " " + end);
 }
 function convert(str) {
+    str = String(str);
 	var date = new Date(str),
 	mnth = ("0" + (date.getMonth() + 1)).slice(-2),
 	day = ("0" + date.getDate()).slice(-2);
