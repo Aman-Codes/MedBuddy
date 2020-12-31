@@ -1,6 +1,6 @@
-let email = 'Enter your email id';
-let password = 'Enter your email id password';
-let mongoDbUrl = 'Enter your mongodb atlas url'
+let email = 'EMAIL';
+let password = 'PASSWORD';
+let mongoDbUrl = 'MONGODB URL'
 
 module.exports = {
     email: email,

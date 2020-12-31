@@ -1,402 +1,177 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-<head>
+
+  <head>
     <!-- Meta Tags -->
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta name="description" content=""><meta name="keywords" content=""><title>Online Multi Doctor Appointment Management</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Online Multi Doctor Appointment Management</title>
     <!-- Favicon -->
     <link rel="icon" type="image/jpg" href="assets/images/icon.jpg">
 
-     <!-- Stylesheets -->
-     <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">
-     <link rel="stylesheet" href="assets/lib/css/fontawesome.min.css">
-     <link rel="stylesheet" href="assets/lib/css/responsive.css">
-     <link rel="stylesheet" href="assets/lib/css/select2.min.css">
-     <link rel="stylesheet" href="assets/lib/css/spacing.css">
-     <link rel="stylesheet" href="assets/lib/css/style.css">
-     <link rel="stylesheet" href="assets/lib/css/owl.carousel.min.css">
-     <link rel="stylesheet" href="assets/lib/css/animate.css">
-     <link rel="stylesheet" href="assets/lib/css/bootstrap-datepicker.min.css">
-     <link rel="stylesheet" href="assets/lib/css/magnific-popup.css">
-     <link rel="stylesheet" href="assets/css/header.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/lib/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/lib/css/responsive.css">
+    <link rel="stylesheet" href="assets/lib/css/select2.min.css">
+    <link rel="stylesheet" href="assets/lib/css/spacing.css">
+    <link rel="stylesheet" href="assets/lib/css/style.css">
+    <link rel="stylesheet" href="assets/lib/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/lib/css/animate.css">
+    <link rel="stylesheet" href="assets/lib/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="assets/lib/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/header.css">
 
-</head>
+  </head>
 
-<body onLoad="typeWriter()">
+  <body onLoad="typeWriter()">
+    <!--Header-->
+    <%- include('partial/header.ejs', {data: data }); %>
 
-    <!--Header Start-->
-    <nav class="navbar navbar-expand-md navbar-light" id = "header">
-        <img src="assets/images/appointment.jpg" width="100" height="100" alt="logo">
-        <ul class="list-group list-group-horizontal-sm">
-            <li class="list-group-item">
-                <i class="fa fa-envelope"></i>
-                <span>info@yourwebsite.com</span>
-            </li>
-            <li class="list-group-item">
-                <i class="fa fa-phone"></i>
-                <span>xxx-xxx-xxxx</span>
-            </li>  
-        </ul>    
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">ABOUT US</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    PATIENT
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <% if (data.user == undefined ){  %>
-                            <a class="dropdown-item" href="/patientregistration">REGISTRATION</a>
-                            <a class="dropdown-item" href="/patientlogin">LOGIN</a>                                                                   
-                      <% } else if(data.user.usertype == "patient") {  %>
-                        <a class="dropdown-item" href="/patienthome">PATIENT HOME</a>   
-                        <a class="dropdown-item" href="/logout">LOGOUT</a> 
-                        <% } else {  %>     
-                            <a class="dropdown-item" href="/patientregistration">REGISTRATION</a>
-                            <a class="dropdown-item" href="/patientlogin">LOGIN</a>                                           
-                        <% } %>   
-                    </div>                 
-                    
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    DOCTOR
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <% if (data.user == undefined){  %>
-                            <a class="dropdown-item" href="/doctorregistration">REGISTRATION</a>
-                            <a class="dropdown-item" href="/doctorlogin">LOGIN</a>
-                            <% } else if(data.user.usertype == "doctor") {  %>
-                                <a class="dropdown-item" href="/doctorhome">DOCTOR HOME</a>   
-                                <a class="dropdown-item" href="/logout">LOGOUT</a>  
-                            <% } else {  %>
-                            <a class="dropdown-item" href="/doctorregistration">REGISTRATION</a>
-                            <a class="dropdown-item" href="/doctorlogin">LOGIN</a> 
-                        <% } %>
-                    </div>                   
-                    
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    AMBULANCE SERVICE
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <% if (data.user == undefined){  %>
-                            <a class="dropdown-item" href="/ambulanceregistration">REGISTRATION </a>
-                            <a class="dropdown-item" href="/ambulancelogin">LOGIN</a>
-                            <% } else if(data.user.usertype == "AmbulanceProvider" ) {  %>
-                            <a class="dropdown-item" href="/ambulancehome">AMBULANCE SERVICE HOME</a>   
-                            <a class="dropdown-item" href="/logout">LOGOUT</a> 
-                            <% } else {  %>
-                                <a class="dropdown-item" href="/ambulanceregistration">REGISTRATION </a>
-                                <a class="dropdown-item" href="/ambulancelogin">LOGIN</a>                      
-                        <% } %>
-                    </div> 
-                    
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/faq">FAQ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/services">SERVICES</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/gallery">GALLERY</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/news">NEWS</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <!--Header End-->
-    <br>
-
-    <!--Banner Start-->
-    <div class="banner-slider" style="background-image: url(assets/images/banner.jpg)">
-    <div class="bg"></div>
-    <div class="bannder-table">
-        <div class="banner-text">
-            <h1 id="typeit"> </h1>
-        </div>
-    </div>
-</div>
-<!--Banner End-->
-
-<!--Gallery Start-->
-<div class="gallery-page pt_60 pb_90">
-    <div class="container">
+    <!--Gallery Start-->
+    <div class="gallery-page pt_60 pb_90">
+      <div class="container">
         <div class="row">
-                            <div class="col-lg-4 col-sm-6">
-                    <div class="gallery-group ">
-                        <div class="gallery-photo" style="background-image: url(assets/images/gal1.jpg)">
-                            <div class="gallery-bg"></div>
-                            <div class="gallery-table">
-                                <div class="gallery-icon">
-                                    <a href="assets/images/gal1.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="gallery-group ">
+              <div class="gallery-photo" style="background-image: url(assets/images/gal1.jpg)">
+                <div class="gallery-bg"></div>
+                <div class="gallery-table">
+                  <div class="gallery-icon">
+                    <a href="assets/images/gal1.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
+                  </div>
                 </div>
-                    <div class="col-lg-4 col-sm-6">
-                    <div class="gallery-group">
-                        <div class="gallery-photo" style="background-image: url(assets/images/gal2.jpg)">
-                            <div class="gallery-bg"></div>
-                            <div class="gallery-table">
-                                <div class="gallery-icon">
-                                    <a href="assets/images/gal2.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    <div class="col-lg-4 col-sm-6">
-                    <div class="gallery-group">
-                        <div class="gallery-photo" style="background-image: url(assets/images/gal3.jpg)">
-                            <div class="gallery-bg"></div>
-                            <div class="gallery-table">
-                                <div class="gallery-icon">
-                                    <a href="assets/images/gal3.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    <div class="col-lg-4 col-sm-6">
-                    <div class="gallery-group">
-                        <div class="gallery-photo" style="background-image: url(assets/images/gal4.jpg)">
-                            <div class="gallery-bg"></div>
-                            <div class="gallery-table">
-                                <div class="gallery-icon">
-                                    <a href="assets/images/gal4.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    <div class="col-lg-4 col-sm-6">
-                    <div class="gallery-group">
-                        <div class="gallery-photo" style="background-image: url(assets/images/gal5.jpg)">
-                            <div class="gallery-bg"></div>
-                            <div class="gallery-table">
-                                <div class="gallery-icon">
-                                    <a href="assets/images/gal5.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    <div class="col-lg-4 col-sm-6">
-                    <div class="gallery-group">
-                        <div class="gallery-photo" style="background-image: url(assets/images/gal6.jpg)">
-                            <div class="gallery-bg"></div>
-                            <div class="gallery-table">
-                                <div class="gallery-icon">
-                                    <a href="assets/images/gal6.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    <div class="col-lg-4 col-sm-6">
-                    <div class="gallery-group">
-                        <div class="gallery-photo" style="background-image: url(assets/images/gal7.jpg)">
-                            <div class="gallery-bg"></div>
-                            <div class="gallery-table">
-                                <div class="gallery-icon">
-                                    <a href="assets/images/gal7.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    <div class="col-lg-4 col-sm-6">
-                    <div class="gallery-group">
-                        <div class="gallery-photo" style="background-image: url(assets/images/gal8.jpg)">
-                            <div class="gallery-bg"></div>
-                            <div class="gallery-table">
-                                <div class="gallery-icon">
-                                    <a href="assets/images/gal8.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    <div class="col-lg-4 col-sm-6">
-                    <div class="gallery-group">
-                        <div class="gallery-photo" style="background-image: url(assets/images/gal9.jpg)">
-                            <div class="gallery-bg"></div>
-                            <div class="gallery-table">
-                                <div class="gallery-icon">
-                                    <a href="assets/images/gal9.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-    </div>
-</div>
-<!--Gallery End-->    
-
-
-<!--Call Start-->
-<div class="call-us" style="background-image: url(assets/images/background.jpg)">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-9 col-md-8 col-12">
-                <div class="call-text">
-                    <h3>Now getting an appointment in any hospital has become online & easy!?</h3>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="gallery-group">
+              <div class="gallery-photo" style="background-image: url(assets/images/gal2.jpg)">
+                <div class="gallery-bg"></div>
+                <div class="gallery-table">
+                  <div class="gallery-icon">
+                    <a href="assets/images/gal2.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-12">
-                <div class="button">
-                    <a href="/patientregistration"> Book Appointment Now <i class="fa fa-chevron-circle-right"></i></a>
-                </div>                
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="gallery-group">
+              <div class="gallery-photo" style="background-image: url(assets/images/gal3.jpg)">
+                <div class="gallery-bg"></div>
+                <div class="gallery-table">
+                  <div class="gallery-icon">
+                    <a href="assets/images/gal3.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="gallery-group">
+              <div class="gallery-photo" style="background-image: url(assets/images/gal4.jpg)">
+                <div class="gallery-bg"></div>
+                <div class="gallery-table">
+                  <div class="gallery-icon">
+                    <a href="assets/images/gal4.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="gallery-group">
+              <div class="gallery-photo" style="background-image: url(assets/images/gal5.jpg)">
+                <div class="gallery-bg"></div>
+                <div class="gallery-table">
+                  <div class="gallery-icon">
+                    <a href="assets/images/gal5.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="gallery-group">
+              <div class="gallery-photo" style="background-image: url(assets/images/gal6.jpg)">
+                <div class="gallery-bg"></div>
+                <div class="gallery-table">
+                  <div class="gallery-icon">
+                    <a href="assets/images/gal6.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="gallery-group">
+              <div class="gallery-photo" style="background-image: url(assets/images/gal7.jpg)">
+                <div class="gallery-bg"></div>
+                <div class="gallery-table">
+                  <div class="gallery-icon">
+                    <a href="assets/images/gal7.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="gallery-group">
+              <div class="gallery-photo" style="background-image: url(assets/images/gal8.jpg)">
+                <div class="gallery-bg"></div>
+                <div class="gallery-table">
+                  <div class="gallery-icon">
+                    <a href="assets/images/gal8.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="gallery-group">
+              <div class="gallery-photo" style="background-image: url(assets/images/gal9.jpg)">
+                <div class="gallery-bg"></div>
+                <div class="gallery-table">
+                  <div class="gallery-icon">
+                    <a href="assets/images/gal9.jpg" class="magnific"><i class="fa fa-search-plus"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<!--Call End-->
+    <!--Gallery End-->
 
-<!-- Address -->
-
-<div class="feature-area feature-two bg-area pt_90 pb_90">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="headline">
-                    <h4>Address</h4>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <br>
-                            <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
-                        </div>
-                        <div class="feature-text">
-                            <p>
-                                3153 Foley Street<br>
-                                Miami, FL 33176                           
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                                <div class="col-lg-4 col-md-6">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <br>
-                            <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
-                        </div>
-                        <div class="feature-text">
-                            <p>
-                                Sales: xxx-xxx-xxxx<br>
-                                Support: 963-612-1782                              
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                                <div class="col-lg-4 col-md-6">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <br>
-                            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
-                        </div>
-                        <div class="feature-text">
-                            <p>
-                                sales@yourwebsite.com<br>
-                                support@yourwebsite.com                            
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="aman">
-                            <div class="footer-item">
-                                <ul class="footer-social">
-                                    <li><a href="http://www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="http://www.twitter.com"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="http://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="http://www.pinterest.com"><i class="fab fa-pinterest"></i></a></li>
-                                    <li><a href="http://www.youtube.com"><i class="fab fa-youtube"></i></a></li>                        
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-</div>
-
-
-<!--Footer-Area Start-->
-<div class="footer-bottom pt_50 pb_50">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="footer-menu">
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/terms">Terms and Conditions</a></li>
-                        <li><a href="/privacypolicy">Privacy Policy</a></li>
-                        <li><a href="/">Visitor: &nbsp;
-                            <img src='https://www.free-website-hit-counter.com/c.php?d=9&id=124065&s=5' border='0' alt='Free Website Hit Counter'>
-                        </a></li>
-                    </ul>
-                </div>
-                <div class="copy-text">
-                    <p>
-                        Copyright © 2020 
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Footer-Area End-->
-
-<!--Scroll-Top-->
-<div class="scroll-top" onclick="topFunction()" >
-    <i class="fa fa-angle-up"></i>
-</div>
-<!--Scroll-Top-->
-
-<script>
-    var i = 0;
-    var txt = 'WELCOME TO STARTUP NAME';
-    var speed = 60;
+    <!--Footer-->
+    <%- include('partial/footer.ejs'); %>
     
-    function typeWriter() {
-      if (i < txt.length) {
-        document.getElementById("typeit").innerHTML += txt.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
+    <script>
+      var i = 0;
+      var txt = 'WELCOME TO STARTUP NAME';
+      var speed = 60;
+
+      function typeWriter() {
+        if (i < txt.length) {
+          document.getElementById("typeit").innerHTML += txt.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
       }
-    }
-</script>
+    </script>
 
-</body>
+  </body>
 
-<!-- JavaScript -->
-<script type="text/javascript" src="assets/lib/js/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="assets/lib/js/popper.min.js"></script>
-<script type="text/javascript" src="assets/lib/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="assets/lib/js/all.min.js"></script>
-<script type="text/javascript" src="assets/lib/js/select2.full.min.js"></script>
-<script type="text/javascript" src="assets/js/about.js"></script>
+  <!-- JavaScript -->
+  <script type="text/javascript" src="assets/lib/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="assets/lib/js/popper.min.js"></script>
+  <script type="text/javascript" src="assets/lib/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="assets/lib/js/all.min.js"></script>
+  <script type="text/javascript" src="assets/lib/js/select2.full.min.js"></script>
+  <script type="text/javascript" src="assets/js/about.js"></script>
 
 </html>

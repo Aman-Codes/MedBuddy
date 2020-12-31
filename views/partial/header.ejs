@@ -1,0 +1,110 @@
+<!--Navbar Start-->
+<nav class="navbar navbar-expand-md navbar-light" id="header">
+  <img src="assets/images/appointment.jpg" width="100" height="100" alt="logo">
+  <ul class="list-group list-group-horizontal-sm">
+    <li class="list-group-item">
+      <i class="fa fa-envelope"></i>
+      <span>info@yourwebsite.com</span>
+    </li>
+    <li class="list-group-item">
+      <i class="fa fa-phone"></i>
+      <span>xxx-xxx-xxxx</span>
+    </li>
+  </ul>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">ABOUT US</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          PATIENT
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <% if (data.user==undefined ){ %>
+            <a class="dropdown-item" href="/patientregistration">REGISTRATION</a>
+            <a class="dropdown-item" href="/patientlogin">LOGIN</a>
+            <% } else if(data.user.usertype=="patient" ) { %>
+              <a class="dropdown-item" href="/patienthome">PATIENT HOME</a>
+              <a class="dropdown-item" href="/logout">LOGOUT</a>
+              <% } else { %>
+                <a class="dropdown-item" href="/patientregistration">REGISTRATION</a>
+                <a class="dropdown-item" href="/patientlogin">LOGIN</a>
+                <% } %>
+        </div>
+
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          DOCTOR
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <% if (data.user==undefined){ %>
+            <a class="dropdown-item" href="/doctorregistration">REGISTRATION</a>
+            <a class="dropdown-item" href="/doctorlogin">LOGIN</a>
+            <% } else if(data.user.usertype=="doctor" ) { %>
+              <a class="dropdown-item" href="/doctorhome">DOCTOR HOME</a>
+              <a class="dropdown-item" href="/logout">LOGOUT</a>
+              <% } else { %>
+                <a class="dropdown-item" href="/doctorregistration">REGISTRATION</a>
+                <a class="dropdown-item" href="/doctorlogin">LOGIN</a>
+                <% } %>
+        </div>
+
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          AMBULANCE SERVICE
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <% if (data.user==undefined){ %>
+            <a class="dropdown-item" href="/ambulanceregistration">REGISTRATION </a>
+            <a class="dropdown-item" href="/ambulancelogin">LOGIN</a>
+            <% } else if(data.user.usertype=="AmbulanceProvider" ) { %>
+              <a class="dropdown-item" href="/ambulancehome">AMBULANCE SERVICE HOME</a>
+              <a class="dropdown-item" href="/logout">LOGOUT</a>
+              <% } else { %>
+                <a class="dropdown-item" href="/ambulanceregistration">REGISTRATION </a>
+                <a class="dropdown-item" href="/ambulancelogin">LOGIN</a>
+                <% } %>
+        </div>
+
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/faq">FAQ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/services">SERVICES</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/gallery">GALLERY</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/news">NEWS</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--Navbar End-->
+<br>
+
+<!--Banner Start-->
+<div class="banner-slider" style="background-image: url(assets/images/banner.jpg)">
+  <div class="bg"></div>
+  <div class="bannder-table">
+    <div class="banner-text">
+      <h1 id="typeit"> </h1>
+    </div>
+  </div>
+</div>
+<!--Banner End-->

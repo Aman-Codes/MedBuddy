@@ -1,495 +1,278 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <title>Online Multi Doctor Appointment Management</title>
     <!-- Favicon -->
     <link rel="icon" type="image/jpg" src="/assets/images/icon.jpg">
 
-     <!-- Stylesheets -->
-     <link rel="stylesheet" href="/assets/lib/css/bootstrap.min.css">
-     <link rel="stylesheet" href="/assets/lib/css/fontawesome.min.css">
-     <link rel="stylesheet" href="/assets/lib/css/responsive.css">
-     <link rel="stylesheet" href="/assets/lib/css/select2.min.css">
-     <link rel="stylesheet" href="/assets/lib/css/spacing.css">
-     <link rel="stylesheet" href="/assets/lib/css/style.css">
-     <link rel="stylesheet" href="/assets/lib/css/owl.carousel.min.css">
-     <link rel="stylesheet" href="/assets/lib/css/animate.css">
-     <link rel="stylesheet" href="/assets/lib/css/bootstrap-datepicker.min.css">
-     <link rel="stylesheet" href="/assets/lib/css/magnific-popup.css">
-     <link rel="stylesheet" href="/assets/css/header.css">
-     <link rel="stylesheet" href="/assets/css/style-calendar.css">
-     <link rel="stylesheet" href="/assets/css/vanilla-calendar.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/lib/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/assets/lib/css/responsive.css">
+    <link rel="stylesheet" href="/assets/lib/css/select2.min.css">
+    <link rel="stylesheet" href="/assets/lib/css/spacing.css">
+    <link rel="stylesheet" href="/assets/lib/css/style.css">
+    <link rel="stylesheet" href="/assets/lib/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/lib/css/animate.css">
+    <link rel="stylesheet" href="/assets/lib/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="/assets/lib/css/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/style-calendar.css">
+    <link rel="stylesheet" href="/assets/css/vanilla-calendar.css">
 
-     <script type="text/javascript" src="/assets/js/vanilla-calendar.js"></script>
+    <script type="text/javascript" src="/assets/js/vanilla-calendar.js"></script>
 
-</head>
+  </head>
 
-<body onLoad="typeWriter()">
-    <!--Header Start-->
-    <nav class="navbar navbar-expand-md navbar-light" id = "header">
-        <img src="/assets/images/appointment.jpg" width="100" height="100" alt="logo">
-        <ul class="list-group list-group-horizontal-sm">
-            <li class="list-group-item">
-                <i class="fa fa-envelope"></i>
-                <span>info@yourwebsite.com</span>
-            </li>
-            <li class="list-group-item">
-                <i class="fa fa-phone"></i>
-                <span>xxx-xxx-xxxx</span>
-            </li>  
-        </ul>    
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">ABOUT US</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    PATIENT
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <% if (data.user == undefined ){  %>
-                            <a class="dropdown-item" href="/patientregistration">REGISTRATION</a>
-                            <a class="dropdown-item" href="/patientlogin">LOGIN</a>                                                                   
-                      <% } else if(data.user.usertype == "patient") {  %>
-                        <a class="dropdown-item" href="/patienthome">PATIENT HOME</a>   
-                        <a class="dropdown-item" href="/logout">LOGOUT</a> 
-                        <% } else {  %>     
-                            <a class="dropdown-item" href="/patientregistration">REGISTRATION</a>
-                            <a class="dropdown-item" href="/patientlogin">LOGIN</a>                                           
-                        <% } %>   
-                    </div>                 
-                    
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    DOCTOR
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <% if (data.user == undefined){  %>
-                            <a class="dropdown-item" href="/doctorregistration">REGISTRATION</a>
-                            <a class="dropdown-item" href="/doctorlogin">LOGIN</a>
-                            <% } else if(data.user.usertype == "doctor") {  %>
-                                <a class="dropdown-item" href="/doctorhome">DOCTOR HOME</a>   
-                                <a class="dropdown-item" href="/logout">LOGOUT</a>  
-                            <% } else {  %>
-                            <a class="dropdown-item" href="/doctorregistration">REGISTRATION</a>
-                            <a class="dropdown-item" href="/doctorlogin">LOGIN</a> 
-                        <% } %>
-                    </div>                   
-                    
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    AMBULANCE SERVICE
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <% if (data.user == undefined){  %>
-                            <a class="dropdown-item" href="/ambulanceregistration">REGISTRATION </a>
-                            <a class="dropdown-item" href="/ambulancelogin">LOGIN</a>
-                            <% } else if(data.user.usertype == "AmbulanceProvider" ) {  %>
-                            <a class="dropdown-item" href="/ambulancehome">AMBULANCE SERVICE HOME</a>   
-                            <a class="dropdown-item" href="/logout">LOGOUT</a> 
-                            <% } else {  %>
-                                <a class="dropdown-item" href="/ambulanceregistration">REGISTRATION </a>
-                                <a class="dropdown-item" href="/ambulancelogin">LOGIN</a>                      
-                        <% } %>
-                    </div> 
-                    
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/faq">FAQ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/services">SERVICES</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/gallery">GALLERY</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/news">NEWS</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <!--Header End-->
-    <br>
+  <body onLoad="typeWriter()">
+    <!--Header-->
+    <%- include('partial/header.ejs', {data: data }); %>
 
-    <!--Banner Start-->
-    <div class="banner-slider" style="background-image: url(/assets/images/banner.jpg)">
-    <div class="bg"></div>
-    <div class="bannder-table">
-        <div class="banner-text">
-            <h1 id="typeit"> </h1>
-        </div>
-    </div>
-</div>
-<!--Banner End-->
-
-<div class="contact-area pt_60 pb_90">
-    <div class="container">
+    <div class="contact-area pt_60 pb_90">
+      <div class="container">
         <div class="row justify-content-center">
-            <div class="col-6">
-                <div class="contact-form headstyle user-login-tab pt_0">  
-                    <ul class="nav nav-tabs mt_15" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#" role="tab">SELECT DATE</a>
-                        </li>
-                    </ul>
+          <div class="col-6">
+            <div class="contact-form headstyle user-login-tab pt_0">
+              <ul class="nav nav-tabs mt_15" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#" role="tab">SELECT DATE</a>
+                </li>
+              </ul>
 
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="patientRegistration" role="tabpanel">
-                            <form action="/patienthome/bookappointment/<%= data.patientid %>/<%= data.disease %>/<%= data.doctorid %>" method="POST" accept-charset="utf-8">                                                                                                     
-                                <div class="form-row row mt_20">
-                                    <div class="form-row row mt_20 text-center">
-                                        <div class="form-group col-12">
-                                            <div class="mb-3">
-                                                <p >Please select the date</p>
-                                                <div class="content">
-        
-                                                    <div class="area-buttons">
-                                                        <button class="info" name="pastDates" style="display: none;" >Disable past dates</button>
-                                                        <button class="info" name="availableDates" style="display: none;" >Set available dates</button>
-                                                        <button class="info" name="availableWeekDays" style="display: none;" >Set available weekdays</button>
-                                                    </div>
-                                                    
-                                                    <div id="myCalendar" class="vanilla-calendar" style="margin-bottom: 20px"></div>
-                                                    <div style="display: table;">
-                                                        <p style="margin-left: 5.4rem; display: table-cell;">Chosen Date: </p><input type="text" id="ChosenConvertedDate" name="ChosenConvertedDate" style="display: table-cell;" readonly required></input><br/>
-                                                        <br><p style="margin-left: 5.4rem; display: table-cell;">Time: </p><input type="text" id="ChosenTime" name="ChosenTime" style="display: table-cell;" readonly required></input>
-                                                        <br/><input type="text" id="ChosenDate" name="ChosenDate" style="display: none;"></input>
-                                                        <div id="DataId" data-sortedpatient='<%= data.sortedpatient %>' data-currentappointment = "<%= data.user.CurrentAppointmentDate %>" data-currentdisease="<%= data.user.CurrentDisease %>" data-status="<%= data.user.status %>"></div>
-                                                    </div>                                                                        
-                                                </div>
-                                            </div>
-                                        </div>                                    
-                                        <div class="form-group col-12 text-center mb-3">
-                                            <button type="submit" class="btn" name="form_registration"> Next </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>                       
-                        </div>
-                    </div>  
-                </div>
-            </div>
-        </div>
-    </div>
-</div>     
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div class="tab-pane active" id="patientRegistration" role="tabpanel">
+                  <form
+                    action="/patienthome/bookappointment/<%= data.patientid %>/<%= data.disease %>/<%= data.doctorid %>"
+                    method="POST" accept-charset="utf-8">
+                    <div class="form-row row mt_20">
+                      <div class="form-row row mt_20 text-center">
+                        <div class="form-group col-12">
+                          <div class="mb-3">
+                            <p>Please select the date</p>
+                            <div class="content">
 
+                              <div class="area-buttons">
+                                <button class="info" name="pastDates" style="display: none;">Disable past dates</button>
+                                <button class="info" name="availableDates" style="display: none;">Set available
+                                  dates</button>
+                                <button class="info" name="availableWeekDays" style="display: none;">Set available
+                                  weekdays</button>
+                              </div>
 
-<!--Call Start-->
-    <div class="call-us" style="background-image: url(/assets/images/background.jpg)">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9 col-md-8 col-12">
-                    <div class="call-text">
-                        <h3>Now getting an appointment in any hospital has become online & easy!?</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-12">
-                    <div class="button">
-                        <a href="/patientregistration"> Book Appointment Now <i class="fa fa-chevron-circle-right"></i></a>
-                    </div>                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Call End-->
-
-    <!-- Address -->
-
-<div class="feature-area feature-two bg-area pt_90 pb_90">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="headline">
-                    <h4>Address</h4>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <br>
-                            <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
-                        </div>
-                        <div class="feature-text">
-                            <p>
-                                3153 Foley Street<br>
-                                Miami, FL 33176                           
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                                <div class="col-lg-4 col-md-6">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <br>
-                            <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
-                        </div>
-                        <div class="feature-text">
-                            <p>
-                                Sales: xxx-xxx-xxxx<br>
-                                Support: 963-612-1782                              
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                                <div class="col-lg-4 col-md-6">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <br>
-                            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
-                        </div>
-                        <div class="feature-text">
-                            <p>
-                                sales@yourwebsite.com<br>
-                                support@yourwebsite.com                            
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="aman">
-                            <div class="footer-item">
-                                <ul class="footer-social">
-                                    <li><a href="http://www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="http://www.twitter.com"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="http://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="http://www.pinterest.com"><i class="fab fa-pinterest"></i></a></li>
-                                    <li><a href="http://www.youtube.com"><i class="fab fa-youtube"></i></a></li>                        
-                                </ul>
+                              <div id="myCalendar" class="vanilla-calendar" style="margin-bottom: 20px"></div>
+                              <div style="display: table;">
+                                <p style="margin-left: 5.4rem; display: table-cell;">Chosen Date: </p><input type="text"
+                                  id="ChosenConvertedDate" name="ChosenConvertedDate" style="display: table-cell;"
+                                  readonly required></input><br />
+                                <br>
+                                <p style="margin-left: 5.4rem; display: table-cell;">Time: </p><input type="text"
+                                  id="ChosenTime" name="ChosenTime" style="display: table-cell;" readonly
+                                  required></input>
+                                <br /><input type="text" id="ChosenDate" name="ChosenDate"
+                                  style="display: none;"></input>
+                                <div id="DataId" data-sortedpatient='<%= data.sortedpatient %>'
+                                  data-currentappointment="<%= data.user.CurrentAppointmentDate %>"
+                                  data-currentdisease="<%= data.user.CurrentDisease %>"
+                                  data-status="<%= data.user.status %>"></div>
+                              </div>
                             </div>
+                          </div>
                         </div>
+                        <div class="form-group col-12 text-center mb-3">
+                          <button type="submit" class="btn" name="form_registration"> Next </button>
+                        </div>
+                      </div>
                     </div>
+                  </form>
                 </div>
+              </div>
             </div>
-    </div>
-</div>
-
-
-    <!--Footer-Area Start-->
-    
-    <div class="footer-bottom pt_50 pb_50">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="footer-menu">
-                        <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/terms">Terms and Conditions</a></li>
-                            <li><a href="/privacypolicy">Privacy Policy</a></li>
-                            <li><a href="/">Visitor: &nbsp;
-                                <img src='https://www.free-website-hit-counter.com/c.php?d=9&id=124065&s=5' border='0' alt='Free Website Hit Counter'>
-                            </a></li>
-                        </ul>
-                    </div>
-                    <div class="copy-text">
-                        <p>
-                            Copyright © 2020 
-                        </p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-    <!--Footer-Area End-->
 
-    <!--Scroll-Top-->
-    <div class="scroll-top" onclick="topFunction()" >
-        <i class="fa fa-angle-up"></i>
-    </div>
-    <!--Scroll-Top-->
-    
+    <!--Footer-->
+    <%- include('partial/footer.ejs'); %>
+
     <script>
-
-        function ConvertChosenTime(str) {
-            var date1 = new Date(str),
-            hour = date1.getHours(),
-            minutes = date1.getMinutes(),
-            end = "AM";
-            if(hour>=12) {
-                end = "PM";
-            }
-            var JoinedTime = [hour,minutes].join(":");
-            return (JoinedTime + " " + end);
+      function ConvertChosenTime(str) {
+        var date1 = new Date(str),
+          hour = date1.getHours(),
+          minutes = date1.getMinutes(),
+          end = "AM";
+        if (hour >= 12) {
+          end = "PM";
         }
-        function convert(str) {
-            var date = new Date(str),
-            mnth = ("0" + (date.getMonth() + 1)).slice(-2),
-            day = ("0" + date.getDate()).slice(-2);
-            return [day,mnth,date.getFullYear()].join("-");    
+        var JoinedTime = [hour, minutes].join(":");
+        return (JoinedTime + " " + end);
+      }
+      function convert(str) {
+        var date = new Date(str),
+          mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+          day = ("0" + date.getDate()).slice(-2);
+        return [day, mnth, date.getFullYear()].join("-");
+      }
+
+      var i = 0;
+      var txt = 'WELCOME TO STARTUP NAME';
+      var speed = 60;
+
+      function typeWriter() {
+        if (i < txt.length) {
+          document.getElementById("typeit").innerHTML += txt.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
         }
+      }
 
-        var i = 0;
-        var txt = 'WELCOME TO STARTUP NAME';
-        var speed = 60;           
-        
-        function typeWriter() {
-            if (i < txt.length) {
-              document.getElementById("typeit").innerHTML += txt.charAt(i);
-              i++;
-              setTimeout(typeWriter, speed);
+      let pastDates = true, availableDates = false, availableWeekDays = false
+
+      let calendar = new VanillaCalendar({
+        selector: "#myCalendar",
+        months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        shortWeekday: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+        onSelect: (data, elem) => {
+          let AllPatient = document.getElementById("DataId");
+          let allpatient = AllPatient.getAttribute('data-sortedpatient');
+          let CurrentAppointment = AllPatient.getAttribute('data-currentappointment');
+          let listpatient = JSON.parse(allpatient);
+
+          let FinalDate;
+          let StartTime = 4.5 * 60 * 60 * 1000;
+          let found = 0;
+
+          // CurrentBookingDate: chosen date on calendar
+          let CurrentBookingDate = new Date(data.date);
+
+          let ModifiedCurrentBookingDate = new Date(CurrentBookingDate.getTime() - CurrentBookingDate.getTime() % 86400000);
+
+          for (const property in listpatient) {
+            let LoopBookingDate = new Date(property);
+
+            if (ModifiedCurrentBookingDate.getTime() == LoopBookingDate.getTime()) {
+              found = 1;
+              let PreviousPatientNumber = listpatient[property];
+              let PreviousPatientTime = PreviousPatientNumber * 15 * 60 * 1000;
+              let FinalMilliseconds = ModifiedCurrentBookingDate.getTime() + StartTime + PreviousPatientTime;
+              FinalDate = new Date(FinalMilliseconds);
+
             }
+          }
+
+          if (found == 0) {
+            let FinalMilliseconds = ModifiedCurrentBookingDate.getTime() + StartTime;
+            FinalDate = new Date(FinalMilliseconds);
+          }
+          document.getElementById("ChosenDate").value = FinalDate;
+          document.getElementById("ChosenTime").value = ConvertChosenTime(FinalDate);
+          document.getElementById("ChosenConvertedDate").value = convert(FinalDate);
         }
+      })
 
-        let pastDates = true, availableDates = false, availableWeekDays = false
-            
-            let calendar = new VanillaCalendar({
-                selector: "#myCalendar",
-                months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-                shortWeekday: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-                onSelect: (data, elem) => {
-                    let AllPatient = document.getElementById("DataId");
-                    let allpatient = AllPatient.getAttribute('data-sortedpatient');
-                    let CurrentAppointment = AllPatient.getAttribute('data-currentappointment');
-                    let listpatient = JSON.parse(allpatient);
+      var PastDateFunction = function () {
+        pastDates = !pastDates
+        calendar.set({ pastDates: pastDates })
+        btnPastDates.innerText = `${(pastDates ? 'Disable' : 'Enable')} past dates`
+        AvailableWeekDaysFunction()
+      }
 
-                    let FinalDate;
-                    let StartTime = 4.5*60*60*1000;
-                    let found=0;
+      var AvailableWeekDaysFunction = function () {
+        availableWeekDays = !availableWeekDays
+        btnAvailableWeekDays.innerText = `${(availableWeekDays ? 'Clear available weekdays' : 'Set available weekdays')}`
+        if (!availableWeekDays) {
+          calendar.set({ availableWeekDays: [], datesFilter: false })
+          return
+        }
+        let days = [{
+          day: 'monday'
+        }, {
+          day: 'tuesday'
+        }, {
+          day: 'wednesday'
+        }, {
+          day: 'thursday'
+        }, {
+          day: 'friday'
+        }]
+        calendar.set({ availableWeekDays: days, availableDates: [], datesFilter: true })
+        typeWriter();
+      }
 
-                    // CurrentBookingDate: chosen date on calendar
-                    let CurrentBookingDate = new Date (data.date);
+      let btnPastDates = document.querySelector('[name=pastDates]')
+      btnPastDates.addEventListener('click', function PastDateFunction() {
+        pastDates = !pastDates
+        calendar.set({ pastDates: pastDates })
+        btnPastDates.innerText = `${(pastDates ? 'Disable' : 'Enable')} past dates`
+      })
 
-                    let ModifiedCurrentBookingDate = new Date(CurrentBookingDate.getTime() - CurrentBookingDate.getTime()%86400000);
-                
-                    for (const property in listpatient) {
-                        let LoopBookingDate = new Date(property); 
+      let btnAvailableDates = document.querySelector('[name=availableDates]')
+      btnAvailableDates.addEventListener('click', () => {
+        availableDates = !availableDates
+        btnAvailableDates.innerText = `${(availableDates ? 'Clear available dates' : 'Set available dates')}`
+        if (!availableDates) {
+          calendar.set({ availableDates: [], datesFilter: false })
+          return
+        }
+        let dates = () => {
+          let result = []
+          for (let i = 1; i < 15; ++i) {
+            if (i % 2) continue
+            let date = new Date(new Date().getTime() + (60 * 60 * 24 * 1000) * i)
+            result.push({ date: `${String(date.getFullYear())}-${String(date.getMonth() + 1).padStart(2, 0)}-${String(date.getDate()).padStart(2, 0)}` })
+          }
+          return result
+        }
+        calendar.set({ availableDates: dates(), availableWeekDays: [], datesFilter: true })
+      })
 
-                        if(ModifiedCurrentBookingDate.getTime() == LoopBookingDate.getTime() ) {
-                            found=1;
-                            let PreviousPatientNumber = listpatient[property];
-                            let PreviousPatientTime = PreviousPatientNumber*15*60*1000;
-                            let FinalMilliseconds = ModifiedCurrentBookingDate.getTime() + StartTime + PreviousPatientTime;
-                            FinalDate = new Date (FinalMilliseconds);  
-                                                     
-                        }                
-                    }
+      let btnAvailableWeekDays = document.querySelector('[name=availableWeekDays]')
+      btnAvailableWeekDays.addEventListener('click', function AvailableWeekDaysFunction() {
+        availableWeekDays = !availableWeekDays
+        btnAvailableWeekDays.innerText = `${(availableWeekDays ? 'Clear available weekdays' : 'Set available weekdays')}`
+        if (!availableWeekDays) {
+          calendar.set({ availableWeekDays: [], datesFilter: false })
+          return
+        }
+        let days = [{
+          day: 'monday'
+        }, {
+          day: 'tuesday'
+        }, {
+          day: 'wednesday'
+        }, {
+          day: 'thursday'
+        }, {
+          day: 'friday'
+        }]
+        calendar.set({ availableWeekDays: days, availableDates: [], datesFilter: true })
+      })
 
-                    if(found==0){
-                        let FinalMilliseconds = ModifiedCurrentBookingDate.getTime() + StartTime;
-                        FinalDate = new Date (FinalMilliseconds);
-                    }                 
-                    document.getElementById("ChosenDate").value = FinalDate;
-                    document.getElementById("ChosenTime").value = ConvertChosenTime(FinalDate);
-                    document.getElementById("ChosenConvertedDate").value = convert(FinalDate);
-                }
-            })
+      var AllPatient = document.getElementById("DataId");
+      var CurrentAppointment = AllPatient.getAttribute('data-currentappointment');
 
-            var PastDateFunction = function () {
-                pastDates = !pastDates
-                calendar.set({pastDates: pastDates})
-                btnPastDates.innerText = `${(pastDates ? 'Disable' : 'Enable')} past dates`
-                AvailableWeekDaysFunction()
-            }
+      let DataId = document.getElementById("DataId");
+      let PatientCurrentDisease = DataId.getAttribute('data-currentdisease');
+      let PatientCurrentStatus = DataId.getAttribute('data-status');
 
-            var AvailableWeekDaysFunction = function () {
-                availableWeekDays = !availableWeekDays
-                btnAvailableWeekDays.innerText = `${(availableWeekDays ? 'Clear available weekdays' : 'Set available weekdays')}`
-                if (!availableWeekDays) {
-                    calendar.set({availableWeekDays: [], datesFilter: false})
-                    return
-                }
-                let days = [{
-                    day: 'monday'
-                }, {
-                    day: 'tuesday'
-                }, {
-                    day: 'wednesday'
-                }, {
-                    day: 'thursday'
-                }, {
-                    day: 'friday'
-                }]
-                calendar.set({availableWeekDays: days, availableDates: [], datesFilter: true})
-                typeWriter();
-            }
-            
-            let btnPastDates = document.querySelector('[name=pastDates]')
-            btnPastDates.addEventListener('click', function PastDateFunction (){
-                pastDates = !pastDates
-                calendar.set({pastDates: pastDates})
-                btnPastDates.innerText = `${(pastDates ? 'Disable' : 'Enable')} past dates`
-            })
-            
-            let btnAvailableDates = document.querySelector('[name=availableDates]')
-            btnAvailableDates.addEventListener('click', () => {
-                availableDates = !availableDates
-                btnAvailableDates.innerText = `${(availableDates ? 'Clear available dates' : 'Set available dates')}`
-                if (!availableDates) {
-                    calendar.set({availableDates: [], datesFilter: false})
-                    return
-                }
-                let dates = () => {
-                    let result = []
-                    for (let i = 1; i < 15; ++i) {
-                        if (i % 2) continue
-                        let date = new Date(new Date().getTime() + (60 * 60 * 24 * 1000) * i)
-                        result.push({date: `${String(date.getFullYear())}-${String(date.getMonth() + 1).padStart(2, 0)}-${String(date.getDate()).padStart(2, 0)}`})
-                    }
-                    return result
-                }
-                calendar.set({availableDates: dates(), availableWeekDays: [], datesFilter: true})
-            })
-            
-            let btnAvailableWeekDays = document.querySelector('[name=availableWeekDays]')
-            btnAvailableWeekDays.addEventListener('click', function AvailableWeekDaysFunction () {
-                availableWeekDays = !availableWeekDays
-                btnAvailableWeekDays.innerText = `${(availableWeekDays ? 'Clear available weekdays' : 'Set available weekdays')}`
-                if (!availableWeekDays) {
-                    calendar.set({availableWeekDays: [], datesFilter: false})
-                    return
-                }
-                let days = [{
-                    day: 'monday'
-                }, {
-                    day: 'tuesday'
-                }, {
-                    day: 'wednesday'
-                }, {
-                    day: 'thursday'
-                }, {
-                    day: 'friday'
-                }]
-                calendar.set({availableWeekDays: days, availableDates: [], datesFilter: true})
-            })
+      window.onload = PastDateFunction();
 
-            var AllPatient = document.getElementById("DataId");
-            var CurrentAppointment = AllPatient.getAttribute('data-currentappointment');
-            
-            let DataId = document.getElementById("DataId");
-            let PatientCurrentDisease = DataId.getAttribute('data-currentdisease');
-            let PatientCurrentStatus = DataId.getAttribute('data-status'); 
-
-            window.onload = PastDateFunction();
-        
     </script>
 
-</body>
+  </body>
 
-<!-- JavaScript -->
-<script type="text/javascript" src="/assets/lib/js/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="/assets/lib/js/popper.min.js"></script>
-<script type="text/javascript" src="/assets/lib/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="/assets/lib/js/all.min.js"></script>
-<script type="text/javascript" src="/assets/lib/js/select2.full.min.js"></script>
-<script type="text/javascript" src="/assets/js/about.js"></script>
-<script type="text/javascript" src="/assets/lib/js/date.js"></script>
-<script type="text/javascript" src="/assets/lib/js/time.js"></script>
-<script type="text/javascript" src="/assets/lib/js/parser.js"></script>
-<script type="text/javascript" src="/assets/lib/js/extras.js"></script>
+  <!-- JavaScript -->
+  <script type="text/javascript" src="/assets/lib/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="/assets/lib/js/popper.min.js"></script>
+  <script type="text/javascript" src="/assets/lib/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="/assets/lib/js/all.min.js"></script>
+  <script type="text/javascript" src="/assets/lib/js/select2.full.min.js"></script>
+  <script type="text/javascript" src="/assets/js/about.js"></script>
+  <script type="text/javascript" src="/assets/lib/js/date.js"></script>
+  <script type="text/javascript" src="/assets/lib/js/time.js"></script>
+  <script type="text/javascript" src="/assets/lib/js/parser.js"></script>
+  <script type="text/javascript" src="/assets/lib/js/extras.js"></script>
 
 </html>
