@@ -15,6 +15,15 @@ var router = express.Router({mergeParams: true});
 
 // ==================== GET ROUTES ====================
 
+router.get('/robots.txt', function (req, res) {
+  res.type('text/plain');
+  res.send("User-agent: *\nDisallow: /");
+});
+
+router.get('/sitemap.xml', function(req, res) {
+  res.sendFile(__dirname + '/sitemap.xml');
+});
+
 router.get("/", function(req,res){
 	let data = {};
 	data.user =req.user;	

@@ -64,6 +64,9 @@ app.use(IndexRoutes);
 app.use(PatientRoutes);
 app.use(DoctorRoutes);
 app.use(AmbulanceRoutes);
+app.use(function(req,res){
+  res.status(404).render("404");
+});
 
 var port = process.env.PORT || 4000;
 app.listen(port, () => {
