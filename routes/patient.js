@@ -414,8 +414,8 @@ router.post("/patienthome/:patientid/bookambulance",isAuthorizedPatient,function
 
 	Promise.all([FindAmbulancePromise])
 	.then(function(result){
-		const email = require('../config/keys').email;
-		const password = require('../config/keys').password;
+		const email = process.env.SENDOR_EMAIL;
+		const password = process.env.SENDOR_PASSWORD;
 		var transporter = nodemailer.createTransport({
 			service: 'gmail',
 			auth: {

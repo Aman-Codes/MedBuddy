@@ -5,22 +5,34 @@ const localStrategy         = require('passport-local'),
     mongoose                = require('mongoose'),
     express                 = require('express'), 
     app                     = express(),
+    helmet                  = require('helmet'),
     Patient                 = require("./models/patient"),
     Doctor                  = require("./models/doctor"),
     AmbulanceRegistration   = require("./models/ambulanceregistration"),    
     IndexRoutes             = require("./routes/index"),
     PatientRoutes           = require("./routes/patient"),
     DoctorRoutes            = require("./routes/doctor"),
-    AmbulanceRoutes         = require("./routes/ambulance"),      
-    compression             = require('compression'),
-    mongourl                = require('./config/keys').mongourl;
+    AmbulanceRoutes         = require("./routes/ambulance"), 
+    session                 = require('cookie-session'), 
+    compression             = require('compression');
+  
+require('dotenv').config();
 
 app.use(compression());
-
-mongoose.connect( (mongourl ?? "mongodb://localhost/medbuddy") ,{
+app.use(helmet());
+if(process.env.NODE_ENV === 'production') {
+  mongoose.connect( process.env.MONGODB_URL ,{
     useUnifiedTopology: true,useNewUrlParser:true , 
     useFindAndModify: false
-});
+  });
+}
+else {
+  mongoose.connect( "mongodb://localhost/medbuddy" ,{
+    useUnifiedTopology: true,useNewUrlParser:true , 
+    useFindAndModify: false
+  });
+}
+
 
 app.use(express.static(__dirname + '/public'));
 app.set("view engine", "ejs");
@@ -28,8 +40,8 @@ app.use(bodyParser.urlencoded({extended: true, useNewUrlParser:true}));
 app.use(methodOverride('_method'));
 
 //  PASSPORT CONFIGURATION //
-app.use(require("express-session")({
-    secret: "Project StartUp is Awesome!",
+app.use(session({
+    secret: "Project MedBuddy is Awesome!",
     resave: false,
     saveUninitialized: false
 }));
