@@ -17,7 +17,7 @@ const localStrategy         = require('passport-local'),
 
 app.use(compression());
 
-mongoose.connect(mongourl,{
+mongoose.connect( (mongourl ?? "mongodb://localhost/medbuddy") ,{
     useUnifiedTopology: true,useNewUrlParser:true , 
     useFindAndModify: false
 });
