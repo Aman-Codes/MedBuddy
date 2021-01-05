@@ -28,11 +28,8 @@ npm install
 
 ### Run locally
 
-<<<<<<< HEAD
-- Change the credentials in the keys.js file in the config folder and save it
-=======
 - Change the credentials in the [keys.js file](https://github.com/Aman-Codes/HospitalWebsite/blob/master/config/keys.js) in the config folder and save it
->>>>>>> f7d461ff3448c8003b53ee722a737c340d6c5a4f
+
 ```
 npm start
 ```
