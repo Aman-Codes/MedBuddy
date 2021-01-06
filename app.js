@@ -34,7 +34,17 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.use(express.static(`${__dirname}/public`));
+app.use(
+  express.static(`${__dirname}/public`, {
+    maxAge: 86400000,
+    setHeaders(res, path) {
+      res.setHeader(
+        'Expires',
+        new Date(Date.now() + 2592000000 * 30).toUTCString()
+      );
+    },
+  })
+);
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true, useNewUrlParser: true }));
 app.use(methodOverride('_method'));

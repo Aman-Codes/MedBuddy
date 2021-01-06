@@ -20,6 +20,7 @@
     "linebreak-style": 0,
     "no-console": "off",
     "no-underscore-dangle": "off",
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "no-unused-vars": "off"
   }
 }
