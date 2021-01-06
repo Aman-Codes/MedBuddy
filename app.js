@@ -63,15 +63,15 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-  Patient.findById(id, (err, patient) => {
+  Patient.findById(id, (err, Patient) => {
     if (err) return done(err);
-    if (patient) return done(null, patient);
-    Doctor.findById(id, (error, doctor) => {
+    if (Patient) return done(null, Patient);
+    Doctor.findById(id, (error, Doctor) => {
       if (error) return done(error);
-      if (doctor) return done(null, doctor);
-      AmbulanceRegistration.findById(id, (e, ambulanceRegistration) => {
+      if (Doctor) return done(null, Doctor);
+      AmbulanceRegistration.findById(id, (e, AmbulanceRegistration) => {
         if (e) return done(e);
-        if (ambulanceRegistration) return done(null, ambulanceRegistration);
+        if (AmbulanceRegistration) return done(null, AmbulanceRegistration);
         return done(e);
       });
       return done(error);
