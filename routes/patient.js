@@ -60,12 +60,14 @@ function isAuthorizedPatient(req, res, next) {
 router.get('/patientregistration', (req, res) => {
   const data = {};
   data.user = req.user;
+  data.NODE_ENV = process.env.NODE_ENV;
   res.render('patientregistration', { data });
 });
 
 router.get('/patientlogin', (req, res) => {
   const data = {};
   data.user = req.user;
+  data.NODE_ENV = process.env.NODE_ENV;
   res.render('patientlogin', { data });
 });
 
@@ -73,6 +75,7 @@ router.get('/patienthome', isLoggedIn, (req, res) => {
   const futureappointment = [];
   const pastappointment = [];
   const data = {};
+  data.NODE_ENV = process.env.NODE_ENV;
   const obj1 = {};
 
   const SortPatientPromise = new Promise((resolve, reject) => {
@@ -187,6 +190,7 @@ router.get(
   (req, res) => {
     const data = {};
     data.user = req.user;
+    data.NODE_ENV = process.env.NODE_ENV;
     data.patientid = req.params.patientid;
     res.render('appointmentbooking1', { data });
   }
@@ -198,6 +202,7 @@ router.post(
   (req, res) => {
     const data = {};
     data.user = req.user;
+    data.NODE_ENV = process.env.NODE_ENV;
     const url = `/patienthome/bookappointment/${req.params.patientid}/${req.body.disease}`;
     res.redirect(url);
   }
@@ -220,6 +225,7 @@ router.get(
     ShowDoctorPromise.then((result) => {
       const data = {};
       data.user = req.user;
+      data.NODE_ENV = process.env.NODE_ENV;
       data.patientid = req.params.patientid;
       data.patientdisease = req.params.disease;
       data.doctor = result;
@@ -278,6 +284,7 @@ router.get(
             (15 * 60 * 1000) +
           1;
         data.user = req.user;
+        data.NODE_ENV = process.env.NODE_ENV;
         data.sno = sno;
         data.patientid = req.params.patientid;
         data.disease = req.params.disease;
@@ -335,6 +342,7 @@ router.get('/patienthome/:patientid/edit', isAuthorizedPatient, (req, res) => {
   });
   ShowPatientPromise.then((result) => {
     const data = {};
+    data.NODE_ENV = process.env.NODE_ENV;
     data.user = req.user;
     data.patient = result;
     res.render('patientedit', { data });
@@ -370,6 +378,7 @@ router.post('/patientregistration', (req, res) => {
       console.log(err);
       const data = {};
       data.user = req.user;
+      data.NODE_ENV = process.env.NODE_ENV;
       res.render('patientregistration', { data });
     }
     console.log(item);

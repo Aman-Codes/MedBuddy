@@ -52,12 +52,14 @@ function isAuthorizedDoctor(req, res, next) {
 router.get('/doctorregistration', (req, res) => {
   const data = {};
   data.user = req.user;
+  data.NODE_ENV = process.env.NODE_ENV;
   res.render('doctorregistration', { data });
 });
 
 router.get('/doctorlogin', (req, res) => {
   const data = {};
   data.user = req.user;
+  data.NODE_ENV = process.env.NODE_ENV;
   res.render('doctorlogin', { data });
 });
 
@@ -65,6 +67,7 @@ router.get('/doctorhome', isLoggedIn, (req, res) => {
   const futureappointment = [];
   const pastappointment = [];
   const data = {};
+  data.NODE_ENV = process.env.NODE_ENV;
 
   const SearchAppointmentPromise = new Promise((resolve, reject) => {
     Appointment.find({ DoctorId: req.user._id })
@@ -169,6 +172,7 @@ router.get(
   (req, res) => {
     const data = {};
     data.user = req.user;
+    data.NODE_ENV = process.env.NODE_ENV;
     data.PatientId = req.params.patientid;
     data.AppointmentId = req.params.appointmentid;
     res.render('addprescription', { data });
@@ -230,6 +234,7 @@ router.get('/doctorhome/:doctorid/edit', isAuthorizedDoctor, (req, res) => {
   ShowDoctorPromise.then((result) => {
     const data = {};
     data.user = req.user;
+    data.NODE_ENV = process.env.NODE_ENV;
     data.doctor = result;
     res.render('doctoredit', { data });
   }).catch((error) => {
@@ -264,6 +269,7 @@ router.post('/doctorregistration', (req, res) => {
       console.log(err);
       const data = {};
       data.user = req.user;
+      data.NODE_ENV = process.env.NODE_ENV;
       console.log(item);
       res.render('doctorregistration', { data });
     }

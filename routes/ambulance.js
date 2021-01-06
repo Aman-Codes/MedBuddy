@@ -51,12 +51,14 @@ function isAuthorizedAmbulance(req, res, next) {
 router.get('/ambulancelogin', (req, res) => {
   const data = {};
   data.user = req.user;
+  data.NODE_ENV = process.env.NODE_ENV;
   res.render('ambulancelogin', { data });
 });
 
 router.get('/ambulanceregistration', (req, res) => {
   const data = {};
   data.user = req.user;
+  data.NODE_ENV = process.env.NODE_ENV;
   res.render('ambulanceregistration', { data });
 });
 
@@ -64,6 +66,7 @@ router.get('/ambulancehome', isLoggedIn, (req, res) => {
   const futurebooking = [];
   const pastbooking = [];
   const data = {};
+  data.NODE_ENV = process.env.NODE_ENV;
 
   const AmbulancePromise = new Promise((resolve, reject) => {
     AmbulanceBooking.find({})
@@ -100,6 +103,7 @@ router.get('/ambulancehome', isLoggedIn, (req, res) => {
     data.futurebooking = futurebooking;
     data.pastbooking = pastbooking;
     data.user = req.user;
+    data.NODE_ENV = process.env.NODE_ENV;
     res.render('ambulancehome', { data });
   }).catch((error) => {
     console.log(`Error From promise ${error}`);
@@ -178,6 +182,7 @@ router.get(
     ShowAmbulancePromise.then((result) => {
       const data = {};
       data.user = req.user;
+      data.NODE_ENV = process.env.NODE_ENV;
       data.ambulance = result;
       res.render('ambulanceedit', { data });
     }).catch((error) => {
@@ -238,6 +243,7 @@ router.post('/ambulanceregistration', (req, res) => {
       if (err) {
         console.log(err);
         const data = {};
+        data.NODE_ENV = process.env.NODE_ENV;
         data.user = req.user;
         res.render('ambulanceregistration', { data });
       }

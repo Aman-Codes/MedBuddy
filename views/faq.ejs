@@ -5,18 +5,24 @@
     <!--Meta Data-->
     <%- include('partial/title.ejs'); %> 
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/lib/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/lib/css/responsive.css">
-    <link rel="stylesheet" href="assets/lib/css/select2.min.css">
-    <link rel="stylesheet" href="assets/lib/css/spacing.css">
-    <link rel="stylesheet" href="assets/lib/css/style.css">
-    <link rel="stylesheet" href="assets/lib/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/lib/css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="assets/lib/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/header.css">
+    <% if (data.NODE_ENV == 'production') { %>
+      <!-- Production Stylesheets -->
+      <link rel="stylesheet" href="assets/production/css/about.min.css">
 
+    <% }else { %>
+      <!-- Development Stylesheets -->
+      <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/lib/css/fontawesome.min.css">
+      <link rel="stylesheet" href="assets/lib/css/responsive.css">
+      <link rel="stylesheet" href="assets/lib/css/select2.min.css">
+      <link rel="stylesheet" href="assets/lib/css/spacing.css">
+      <link rel="stylesheet" href="assets/lib/css/style.css">
+      <link rel="stylesheet" href="assets/lib/css/owl.carousel.min.css">
+      <link rel="stylesheet" href="assets/lib/css/bootstrap-datepicker.min.css">
+      <link rel="stylesheet" href="assets/lib/css/magnific-popup.css">
+      <link rel="stylesheet" href="assets/css/header.css">
+      
+    <% } %>
   </head>
 
   <body onLoad="typeWriter()">
