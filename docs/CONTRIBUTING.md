@@ -13,9 +13,9 @@ We love your input! We want to make contributing to this project as easy and tra
 
 ### 1. Fork it :fork_and_knife:
 
-You can get your own fork/copy of [HospitalWebsite]( https://github.com/Aman-Codes/HospitalWebsite) by using the <kbd><b>Fork</b></kbd></a> button.
+You can get your own fork/copy of [HospitalWebsite](https://github.com/Aman-Codes/HospitalWebsite) by using the <kbd><b>Fork</b></kbd></a> button.
 
- [![Fork Button](https://help.github.com/assets/images/help/repository/fork_button.jpg)](https://github.com/Aman-Codes/HospitalWebsite)
+[![Fork Button](https://help.github.com/assets/images/help/repository/fork_button.jpg)](https://github.com/Aman-Codes/HospitalWebsite)
 
 ### 2. Clone it :busts_in_silhouette:
 
@@ -27,7 +27,7 @@ git clone https://github.com/Your_Username/HospitalWebsite.git
 
 > This makes a local copy of repository in your machine.
 
-Once you have cloned the ` HospitalWebsite ` repository in GitHub, move to that folder first using change directory command.
+Once you have cloned the `HospitalWebsite` repository in GitHub, move to that folder first using change directory command.
 
 ```sh
 # This will change directory to a folder HospitalWebsite
@@ -38,7 +38,7 @@ Move to this folder for all other commands.
 
 ### 3. Set it up :arrow_up:
 
-Run the following commands to see that *your local copy* has a reference to *your forked remote repository* in GitHub :octocat:
+Run the following commands to see that _your local copy_ has a reference to _your forked remote repository_ in GitHub :octocat:
 
 ```sh
 git remote -v
@@ -52,7 +52,7 @@ Now, add a reference to the original [HospitalWebsite](https://github.com/Aman-C
 git remote add upstream https://github.com/Aman-Codes/HospitalWebsite.git
 ```
 
-> This adds a new remote named ***upstream***.
+> This adds a new remote named **_upstream_**.
 
 See the changes using
 
@@ -67,7 +67,7 @@ upstream  https://github.com/Aman-Codes/HospitalWebsite.git (push)
 ### 4. Sync it :recycle:
 
 Always keep your local copy of repository updated with the original repository.
-Before making any changes and/or in an appropriate interval, run the following commands *carefully* to update your local repository.
+Before making any changes and/or in an appropriate interval, run the following commands _carefully_ to update your local repository.
 
 ```sh
 # Fetch all remote repositories and delete any deleted remote branches
@@ -131,4 +131,4 @@ Then add a title and description to your pull request that explains your preciou
 
 Sit and relax till we review your PR, you've made your contribution to our project.
 
-:tada: :confetti_ball: :smiley: _**Happy Contributing**_ :smiley: :confetti_ball: :tada:
+:tada: :confetti*ball: :smiley: ***Happy Contributing**\_ :smiley: :confetti_ball: :tada:

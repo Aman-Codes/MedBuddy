@@ -5,6 +5,7 @@ Patient can choose a date and doctor to consult, the system will automatically g
 Doctor on the other hand can accept/reject the appointment, view all his current and past appintment and upload detailed prescription for the patient.<br/>
 
 ## Visit Online
+
 This website is hosted at [https://hospital-help.herokuapp.com/](https://hospital-help.herokuapp.com/)
 
 ## Getting Started
@@ -33,5 +34,5 @@ npm install
 ```
 npm start
 ```
-Go to: [http://localhost:4000](http://localhost:4000)
 
+Go to: [http://localhost:4000](http://localhost:4000)
