@@ -14,9 +14,12 @@
   },
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": ["error", {
+     "endOfLine":"auto"
+   }],
     "linebreak-style": 0,
     "no-console": "off",
-    "no-underscore-dangle": "off"    
+    "no-underscore-dangle": "off",
+    "consistent-return": "off"
   }
 }

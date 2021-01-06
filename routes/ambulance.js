@@ -2,49 +2,14 @@ const express = require('express');
 const passport = require('passport');
 const AmbulanceRegistration = require('../models/ambulanceregistration');
 const AmbulanceBooking = require('../models/ambulancebooking');
+const {
+  ConvertChosenTime,
+  convert,
+  isLoggedIn,
+  isAuthorizedAmbulance,
+} = require('./helper');
 
 const router = express.Router({ mergeParams: true });
-
-// UTILITY FUNCTIONS
-
-function ConvertChosenTime(str) {
-  const date0 = new Date(str);
-  let hour = date0.getHours();
-  const minutes = date0.getMinutes();
-  let end = 'AM';
-  if (hour >= 12) {
-    hour -= 12;
-    end = 'PM';
-  }
-  const JoinedTime = [hour, minutes].join(':');
-  return `${JoinedTime} ${end}`;
-}
-function convert(str) {
-  const date = new Date(str);
-  const mnth = `0${date.getMonth() + 1}`.slice(-2);
-  const day = `0${date.getDate()}`.slice(-2);
-  return [day, mnth, date.getFullYear()].join('-');
-}
-
-// MIDDLEWARE FUNCTIONS
-function isLoggedIn(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-
-  return res.redirect('back');
-}
-
-function isAuthorizedAmbulance(req, res, next) {
-  if (
-    req.isAuthenticated() &&
-    req.params.ambulanceid.toString() === req.user._id.toString()
-  ) {
-    return next();
-  }
-
-  return res.redirect('back');
-}
 
 // GET ROUTES
 
@@ -80,9 +45,10 @@ router.get('/ambulancehome', isLoggedIn, (req, res) => {
       });
   });
   AmbulancePromise.then((result) => {
+    console.log(result);
     result.forEach((item) => {
       const obj = {};
-
+      console.log(item);
       obj.PatientId = item.PatientId._id;
       obj.PatientName = item.PatientId.name;
       obj.AmbulanceId = item.AmbulanceId;

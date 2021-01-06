@@ -3,49 +3,14 @@ const passport = require('passport');
 const Appointment = require('../models/appointment');
 const Prescription = require('../models/prescription');
 const Doctor = require('../models/doctor');
+const {
+  ConvertChosenTime,
+  convert,
+  isLoggedIn,
+  isAuthorizedDoctor,
+} = require('./helper');
 
 const router = express.Router({ mergeParams: true });
-
-//  UTILITY FUNCTIONS
-
-function ConvertChosenTime(str) {
-  const date0 = new Date(str);
-  let hour = date0.getHours();
-  const minutes = date0.getMinutes();
-  let end = 'AM';
-  if (hour >= 12) {
-    hour -= 12;
-    end = 'PM';
-  }
-  const JoinedTime = [hour, minutes].join(':');
-  return `${JoinedTime} ${end}`;
-}
-function convert(str) {
-  const date = new Date(str);
-  const mnth = `0${date.getMonth() + 1}`.slice(-2);
-  const day = `0${date.getDate()}`.slice(-2);
-  return [day, mnth, date.getFullYear()].join('-');
-}
-
-// MIDDLEWARE FUNCTIONS
-
-function isLoggedIn(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-
-  return res.redirect('back');
-}
-function isAuthorizedDoctor(req, res, next) {
-  if (
-    req.isAuthenticated() &&
-    req.params.doctorid.toString() === req.user._id.toString()
-  ) {
-    return next();
-  }
-
-  return res.redirect('back');
-}
 
 // GET ROUTES
 
@@ -223,7 +188,7 @@ router.post(
 
 router.get('/doctorhome/:doctorid/edit', isAuthorizedDoctor, (req, res) => {
   const ShowDoctorPromise = new Promise((resolve, reject) => {
-    Doctor.findById(req.params.id).exec((err, item) => {
+    Doctor.findById(req.params.doctorid).exec((err, item) => {
       if (err) {
         reject(err);
       } else {
