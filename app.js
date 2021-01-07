@@ -13,21 +13,14 @@ const IndexRoutes = require('./routes/index');
 const PatientRoutes = require('./routes/patient');
 const DoctorRoutes = require('./routes/doctor');
 const AmbulanceRoutes = require('./routes/ambulance');
+const { MongodbUrl } = require('./config/config');
 
 const app = express();
 
-require('dotenv').config();
-
 app.use(compression());
 
-if (process.env.NODE_ENV === 'production') {
-  mongoose.connect(process.env.MONGODB_URL, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useFindAndModify: false,
-  });
-} else {
-  mongoose.connect('mongodb://localhost/medbuddy', {
+if (process.env.NODE_ENV !== 'test') {
+  mongoose.connect(MongodbUrl, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useFindAndModify: false,
@@ -93,11 +86,6 @@ app.use(DoctorRoutes);
 app.use(AmbulanceRoutes);
 app.use((req, res) => {
   res.status(404).render('404');
-});
-
-const port = process.env.PORT || 4000;
-app.listen(port, () => {
-  console.log('Server running');
 });
 
 module.exports = app;

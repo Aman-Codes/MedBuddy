@@ -6,3 +6,4 @@ keys.js
 /public
 .min.js
 .min.css
+/coverage

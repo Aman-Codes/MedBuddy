@@ -4,13 +4,16 @@
   "description": "Hospital Website",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "lint": "eslint ./"
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "lint": "eslint ./",
+    "test": "jest --coverage --detectOpenHandles"
   },
   "author": "Aman Dwivedi",
   "license": "ISC",
+  "jest": {
+    "testEnvironment": "node"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "cloudinary": "^1.22.0",
@@ -30,12 +33,16 @@
     "passport-local-mongoose": "^6.0.1"
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^1.2.3",
     "eslint": "^7.17.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
-    "nodemon": "^2.0.4",
-    "prettier": "^2.2.1"
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "superagent": "^6.1.0",
+    "supertest": "^6.0.1"
   }
 }
