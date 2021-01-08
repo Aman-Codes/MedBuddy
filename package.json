@@ -7,7 +7,7 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "lint": "eslint ./",
-    "test": "jest --coverage --detectOpenHandles"
+    "test": "jest"
   },
   "author": "Aman Dwivedi",
   "license": "ISC",
