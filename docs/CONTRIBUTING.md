@@ -131,4 +131,4 @@ Then add a title and description to your pull request that explains your preciou
 
 Sit and relax till we review your PR, you've made your contribution to our project.
 
-:tada: :confetti*ball: :smiley: ***Happy Contributing**\_ :smiley: :confetti_ball: :tada:
+:tada: :confetti_ball: :smiley: ***Happy Contributing**\_ :smiley: :confetti_ball: :tada:
