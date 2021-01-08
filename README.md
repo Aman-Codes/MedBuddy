@@ -31,6 +31,7 @@ git clone https://github.com/Aman-Codes/HospitalWebsite
 cd HospitalWebsite
 npm install
 ```
+Change the credentials in .env.example and rename it as .env
 
 ### Run locally
 
