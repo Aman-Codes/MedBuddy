@@ -31,7 +31,7 @@ git clone https://github.com/Aman-Codes/HospitalWebsite
 cd HospitalWebsite
 npm install
 ```
-Change the credentials in .env.example and rename it as .env
+**Change the credentials in .env.example and rename it as .env**
 
 ### Run locally
 
@@ -44,3 +44,8 @@ Go to: [http://localhost:4000](http://localhost:4000)
 ### Contributing
 
 We really like contributions in several forms, see [CONTRIBUTING.md](https://github.com/Aman-Codes/HospitalWebsite/blob/master/docs/CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](https://github.com/Aman-Codes/HospitalWebsite/blob/master/docs/CODE_OF_CONDUCT.md)
+
+### User Documentation
+
+For complete user documentation refer [UserDocumentation.md](https://github.com/Aman-Codes/HospitalWebsite/blob/master/docs/UserDocumentation.md)
+
