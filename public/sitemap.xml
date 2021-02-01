@@ -8,77 +8,77 @@
 
 
 <url>
-  <loc>https://hospital-help.herokuapp.com/</loc>
+  <loc>https://medicalbuddy.herokuapp.com/</loc>
   <lastmod>2021-01-01T07:01:08+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://hospital-help.herokuapp.com/about</loc>
+  <loc>https://medicalbuddy.herokuapp.com/about</loc>
   <lastmod>2021-01-01T07:01:08+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hospital-help.herokuapp.com/patientregistration</loc>
+  <loc>https://medicalbuddy.herokuapp.com/patientregistration</loc>
   <lastmod>2021-01-01T07:01:08+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hospital-help.herokuapp.com/patientlogin</loc>
+  <loc>https://medicalbuddy.herokuapp.com/patientlogin</loc>
   <lastmod>2021-01-01T07:01:08+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hospital-help.herokuapp.com/doctorregistration</loc>
+  <loc>https://medicalbuddy.herokuapp.com/doctorregistration</loc>
   <lastmod>2021-01-01T07:01:08+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hospital-help.herokuapp.com/doctorlogin</loc>
+  <loc>https://medicalbuddy.herokuapp.com/doctorlogin</loc>
   <lastmod>2021-01-01T07:01:08+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hospital-help.herokuapp.com/ambulanceregistration</loc>
+  <loc>https://medicalbuddy.herokuapp.com/ambulanceregistration</loc>
   <lastmod>2021-01-01T07:01:08+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hospital-help.herokuapp.com/ambulancelogin</loc>
+  <loc>https://medicalbuddy.herokuapp.com/ambulancelogin</loc>
   <lastmod>2021-01-01T07:01:08+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hospital-help.herokuapp.com/faq</loc>
+  <loc>https://medicalbuddy.herokuapp.com/faq</loc>
   <lastmod>2021-01-01T07:01:08+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hospital-help.herokuapp.com/services</loc>
+  <loc>https://medicalbuddy.herokuapp.com/services</loc>
   <lastmod>2021-01-01T07:01:08+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hospital-help.herokuapp.com/gallery</loc>
+  <loc>https://medicalbuddy.herokuapp.com/gallery</loc>
   <lastmod>2021-01-01T07:01:08+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hospital-help.herokuapp.com/news</loc>
+  <loc>https://medicalbuddy.herokuapp.com/news</loc>
   <lastmod>2021-01-01T07:01:08+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hospital-help.herokuapp.com/view2</loc>
+  <loc>https://medicalbuddy.herokuapp.com/view2</loc>
   <lastmod>2021-01-01T07:01:08+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hospital-help.herokuapp.com/terms</loc>
+  <loc>https://medicalbuddy.herokuapp.com/terms</loc>
   <lastmod>2021-01-01T07:01:08+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hospital-help.herokuapp.com/privacypolicy</loc>
+  <loc>https://medicalbuddy.herokuapp.com/privacypolicy</loc>
   <lastmod>2021-01-01T07:01:08+00:00</lastmod>
   <priority>0.80</priority>
 </url>

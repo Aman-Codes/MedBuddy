@@ -1,8 +1,8 @@
 {
-  "name": "hospitalwebsite",
+  "name": "medbuddy",
   "version": "1.0.0",
-  "description": "Hospital Website",
-  "main": "app.js",
+  "description": "A website which connects doctors, patients and services like ambulance provider",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
