@@ -1,6 +1,6 @@
 # MEDBUDDY
-[![Code Quality Score](https://www.code-inspector.com/project/18491/score/svg)](https://www.code-inspector.com/project/18491/score/svg)
-[![Code Quality Grade](https://www.code-inspector.com/project/18491/status/svg)](https://www.code-inspector.com/project/18491/status/svg)
+[![Code Quality Score](https://www.code-inspector.com/project/18491/score/svg)](https://frontend.code-inspector.com/public/project/18491/MedBuddy/dashboard)
+[![Code Quality Grade](https://www.code-inspector.com/project/18491/status/svg)](https://frontend.code-inspector.com/public/project/18491/MedBuddy/dashboard)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 ![MIT](https://img.shields.io/github/license/Aman-Codes/MedBuddy?color=blue)
 
