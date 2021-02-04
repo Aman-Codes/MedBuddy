@@ -25,11 +25,11 @@ Your machine should have Npm(or Yarn), Node.js, and MongoDB installed to use it 
 
 ### Setting up the repository locally
 
-1. First fork the repo to your account.  
-   Go to the forked repo and clone it to your local machine:
+1. First fork the repo :fork_and_knife: to your account.  
+   Go to the forked repo and clone it :busts_in_silhouette: to your local machine:
 
 ```sh
-git clone https://github.com/<your_username>/MedBuddy.git
+git clone https://github.com/Your_Username/MedBuddy.git
 ```
 
 This will make a copy of the code to your local machine.
@@ -49,8 +49,8 @@ git remote -v
 The response should look like:
 
 ```sh
-origin	https://github.com/<username>/MedBuddy.git (fetch)
-origin	https://github.com/<username>/MedBuddy.git (push)
+origin	https://github.com/Your_Username/MedBuddy.git (fetch)
+origin	https://github.com/Your_Username/MedBuddy.git (push)
 ```
 
 To add upstream to remote, run:
@@ -62,8 +62,8 @@ git remote add upstream https://github.com/Aman-Codes/MedBuddy.git
 Again run `git remote -v`, the response should look like:
 
 ```sh
-origin	https://github.com/<username>/MedBuddy.git (fetch)
-origin	https://github.com/<username>/MedBuddy.git (push)
+origin	https://github.com/Your_Username/MedBuddy.git (fetch)
+origin	https://github.com/Your_Username/MedBuddy.git (push)
 upstream	https://github.com/Aman-Codes/MedBuddy (fetch)
 upstream	https://github.com/Aman-Codes/MedBuddy (push)
 ```
