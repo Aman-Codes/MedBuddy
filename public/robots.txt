@@ -1,3 +1,5 @@
 Sitemap: https://medicalbuddy.herokuapp.com/sitemap.xml
 User-agent: *
-Disallow: /
+Disallow: /patienthome/
+Disallow: /doctorhome/
+Disallow: /ambulancehome/
