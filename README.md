@@ -9,7 +9,7 @@ The doctor on the other hand can accept/reject the appointment, view all his cur
 
 ## Visit Online
 
-This website is hosted at [https://medicalbuddy.herokuapp.com/](https://medicalbuddy.herokuapp.com/)
+This website is hosted at [https://medbuddy.onrender.com/](https://medbuddy.onrender.com/)
 
 ## Getting Started
 
