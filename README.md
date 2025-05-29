@@ -1,13 +1,13 @@
-# MEDBUDDY
+# Carebridge
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-![MIT](https://img.shields.io/github/license/Aman-Codes/MedBuddy?color=blue)
+![MIT](https://img.shields.io/github/license/Aman-Codes/Carebridge?color=blue)
 
 
-MedBuddy is a website that connects doctors, patients, and ambulance providers. Patients can select a date and doctor to consult, and the system will automatically generate an appointment time based on the doctor's schedule. Patients can also view their current and past appointments and book ambulance services. Doctors can accept or reject appointments, view all their current and past appointments, and upload detailed prescriptions for patients.
+Carebridge is a website that connects doctors, patients, and ambulance providers. Patients can select a date and doctor to consult, and the system will automatically generate an appointment time based on the doctor's schedule. Patients can also view their current and past appointments and book ambulance services. Doctors can accept or reject appointments, view all their current and past appointments, and upload detailed prescriptions for patients.
 
 ## Visit Online
 
-This website is hosted at [https://medbuddy.onrender.com/](https://medbuddy.onrender.com/)
+This website is hosted at [https://Carebridge.onrender.com/](https://Carebridge.onrender.com/)
 
 ## Getting Started
 
@@ -25,15 +25,15 @@ Your machine should have Npm(or Yarn), Node.js, and MongoDB installed to use it 
    Go to the forked repo and clone it :busts_in_silhouette: to your local machine:
 
 ```sh
-git clone https://github.com/Your_Username/MedBuddy.git
+git clone https://github.com/Your_Username/Carebridge.git
 ```
 
 This will make a copy of the code to your local machine.
 
-2. Now move to the `MedBuddy` directory.
+2. Now move to the `Carebridge` directory.
 
 ```sh
-cd MedBuddy
+cd Carebridge
 ```
 
 3. Now check the remote of your local code by:
@@ -45,23 +45,23 @@ git remote -v
 The response should look like:
 
 ```sh
-origin	https://github.com/Your_Username/MedBuddy.git (fetch)
-origin	https://github.com/Your_Username/MedBuddy.git (push)
+origin	https://github.com/Your_Username/Carebridge.git (fetch)
+origin	https://github.com/Your_Username/Carebridge.git (push)
 ```
 
 To add upstream to remote, run:
 
 ```sh
-git remote add upstream https://github.com/Aman-Codes/MedBuddy.git
+git remote add upstream https://github.com/Aman-Codes/Carebridge.git
 ```
 
 Again run `git remote -v`, the response should look like:
 
 ```sh
-origin	https://github.com/Your_Username/MedBuddy.git (fetch)
-origin	https://github.com/Your_Username/MedBuddy.git (push)
-upstream	https://github.com/Aman-Codes/MedBuddy (fetch)
-upstream	https://github.com/Aman-Codes/MedBuddy (push)
+origin	https://github.com/Your_Username/Carebridge.git (fetch)
+origin	https://github.com/Your_Username/Carebridge.git (push)
+upstream	https://github.com/Aman-Codes/Carebridge (fetch)
+upstream	https://github.com/Aman-Codes/Carebridge (push)
 ```
 
 4. Once the remote is set, install all the necessary dependencies by the following command:
@@ -80,9 +80,9 @@ Go to: [http://localhost:4000](http://localhost:4000)
 
 ### Contributing
 
-We really like contributions in several forms, see [CONTRIBUTING.md](https://github.com/Aman-Codes/MedBuddy/blob/master/docs/CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](https://github.com/Aman-Codes/MedBuddy/blob/master/docs/CODE_OF_CONDUCT.md)
+We really like contributions in several forms, see [CONTRIBUTING.md](https://github.com/Aman-Codes/Carebridge/blob/master/docs/CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](https://github.com/Aman-Codes/Carebridge/blob/master/docs/CODE_OF_CONDUCT.md)
 
 ### User Documentation
 
-For complete user documentation refer [UserDocumentation.md](https://github.com/Aman-Codes/MedBuddy/blob/master/docs/UserDocumentation.md)
+For complete user documentation refer [UserDocumentation.md](https://github.com/Aman-Codes/Carebridge/blob/master/docs/UserDocumentation.md)
 

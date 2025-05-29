@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <!--Meta Data-->
     <%- include('partial/title.ejs'); %> 
@@ -8,8 +7,7 @@
     <% if (data.NODE_ENV == 'production') { %>
       <!-- Production Stylesheets -->
       <link rel="stylesheet" href="assets/production/css/about.min.css">
-
-    <% }else { %>
+    <% } else { %>
       <!-- Development Stylesheets -->
       <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">
       <link rel="stylesheet" href="assets/lib/css/fontawesome.min.css">
@@ -21,7 +19,6 @@
       <link rel="stylesheet" href="assets/lib/css/bootstrap-datepicker.min.css">
       <link rel="stylesheet" href="assets/lib/css/magnific-popup.css">
       <link rel="stylesheet" href="assets/css/header.css">
-      
     <% } %>
   </head>
 
@@ -38,103 +35,97 @@
               <div id="accordion">
                 <div class="faq-item card">
                   <div class="faq-header" id="heading1">
-                    <button class="faq-button " data-toggle="collapse" data-target="#collapse1" aria-expanded="true"
-                      aria-controls="collapse1"><i class="fa fa-caret-right"></i>Vim at natum graeco percipitur
-                      te?</button>
+                    <button class="faq-button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                      <i class="fa fa-caret-right"></i>How do I book an appointment with a doctor?
+                    </button>
                   </div>
-
                   <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordion">
                     <div class="faq-body">
-                      <p>Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has.
-                        Latine propriae quo no, unum ridens expetenda id sit, at usu eius eligendi singulis. Sea
-                        ocurreret principes ne. At nonumy aperiri pri, nam quodsi copiosae intellegebat et, ex deserunt
-                        euripidis usu. Per ad ullum lobortis. Duo volutpat imperdiet ut, postea salutatus imperdiet ut
-                        per, ad utinam debitis invenire has.</p>
+                      <p>To book an appointment, simply log in to your Carebridge account, go to the "Appointments" section, choose your preferred doctor and time slot, and confirm your booking.</p>
                     </div>
                   </div>
                 </div>
                 <div class="faq-item card">
                   <div class="faq-header" id="heading2">
-                    <button class="faq-button collapsed" data-toggle="collapse" data-target="#collapse2"
-                      aria-expanded="true" aria-controls="collapse2"><i class="fa fa-caret-right"></i>Alterum interesset
-                      eum ad?</button>
+                    <button class="faq-button collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                      <i class="fa fa-caret-right"></i>I forgot my password. How can I reset it?
+                    </button>
                   </div>
-
-                  <div id="collapse2" class="collapse " aria-labelledby="heading2" data-parent="#accordion">
+                  <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
                     <div class="faq-body">
-                      <p>Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has.
-                        Latine propriae quo no, unum ridens expetenda id sit, at usu eius eligendi singulis. Sea
-                        ocurreret principes ne. At nonumy aperiri pri, nam quodsi copiosae intellegebat et, ex deserunt
-                        euripidis usu. Per ad ullum lobortis. Duo volutpat imperdiet ut, postea salutatus imperdiet ut
-                        per, ad utinam debitis invenire has.<br></p>
+                      <p>Click on the “Forgot Password” link on the login page. Enter your registered email, and we’ll send you a secure link to reset your password.</p>
                     </div>
                   </div>
                 </div>
                 <div class="faq-item card">
                   <div class="faq-header" id="heading3">
-                    <button class="faq-button collapsed" data-toggle="collapse" data-target="#collapse3"
-                      aria-expanded="true" aria-controls="collapse3"><i class="fa fa-caret-right"></i>No eos legimus
-                      facilisi constituto?</button>
+                    <button class="faq-button collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                      <i class="fa fa-caret-right"></i>Can I cancel or reschedule an appointment after booking it?
+                    </button>
                   </div>
-
-                  <div id="collapse3" class="collapse " aria-labelledby="heading3" data-parent="#accordion">
+                  <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
                     <div class="faq-body">
-                      <p>Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has.
-                        Latine propriae quo no, unum ridens expetenda id sit, at usu eius eligendi singulis. Sea
-                        ocurreret principes ne. At nonumy aperiri pri, nam quodsi copiosae intellegebat et, ex deserunt
-                        euripidis usu. Per ad ullum lobortis. Duo volutpat imperdiet ut, postea salutatus imperdiet ut
-                        per, ad utinam debitis invenire has.<br></p>
+                      <p>Yes. Go to your dashboard, open the "My Appointments" section, and select the option to cancel or reschedule based on your availability.</p>
                     </div>
                   </div>
                 </div>
                 <div class="faq-item card">
                   <div class="faq-header" id="heading4">
-                    <button class="faq-button collapsed" data-toggle="collapse" data-target="#collapse4"
-                      aria-expanded="true" aria-controls="collapse4"><i class="fa fa-caret-right"></i>Dico persequeris
-                      contentiones ex pri?</button>
+                    <button class="faq-button collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                      <i class="fa fa-caret-right"></i>Are my medical records safe on this platform?
+                    </button>
                   </div>
-
-                  <div id="collapse4" class="collapse " aria-labelledby="heading4" data-parent="#accordion">
+                  <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion">
                     <div class="faq-body">
-                      <p>Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has.
-                        Latine propriae quo no, unum ridens expetenda id sit, at usu eius eligendi singulis. Sea
-                        ocurreret principes ne. At nonumy aperiri pri, nam quodsi copiosae intellegebat et, ex deserunt
-                        euripidis usu. Per ad ullum lobortis. Duo volutpat imperdiet ut, postea salutatus imperdiet ut
-                        per, ad utinam debitis invenire has.<br></p>
+                      <p>Absolutely. Carebridge uses secure, encrypted protocols to store and transfer all health information. Only you and your authorized doctor have access to your records.</p>
                     </div>
                   </div>
                 </div>
                 <div class="faq-item card">
                   <div class="faq-header" id="heading5">
-                    <button class="faq-button collapsed" data-toggle="collapse" data-target="#collapse5"
-                      aria-expanded="true" aria-controls="collapse5"><i class="fa fa-caret-right"></i>Stet malis
-                      accusata est at, cum ad ancillae?</button>
+                    <button class="faq-button collapsed" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                      <i class="fa fa-caret-right"></i>How do I register as a doctor on Carebridge?
+                    </button>
                   </div>
-
-                  <div id="collapse5" class="collapse " aria-labelledby="heading5" data-parent="#accordion">
+                  <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion">
                     <div class="faq-body">
-                      <p>Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has.
-                        Latine propriae quo no, unum ridens expetenda id sit, at usu eius eligendi singulis. Sea
-                        ocurreret principes ne. At nonumy aperiri pri, nam quodsi copiosae intellegebat et, ex deserunt
-                        euripidis usu. Per ad ullum lobortis. Duo volutpat imperdiet ut, postea salutatus imperdiet ut
-                        per, ad utinam debitis invenire has.<br></p>
+                      <p>Click on the "Doctor Login" page and select "Register as Doctor." Fill in your credentials and upload your verification documents. Once approved, you’ll get access to your dashboard.</p>
                     </div>
                   </div>
                 </div>
                 <div class="faq-item card">
                   <div class="faq-header" id="heading6">
-                    <button class="faq-button collapsed" data-toggle="collapse" data-target="#collapse6"
-                      aria-expanded="true" aria-controls="collapse6"><i class="fa fa-caret-right"></i>Primis debitis eu
-                      usu, sea alienum legendos?</button>
+                    <button class="faq-button collapsed" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                      <i class="fa fa-caret-right"></i>Can I access Carebridge services on mobile?
+                    </button>
                   </div>
-
-                  <div id="collapse6" class="collapse " aria-labelledby="heading6" data-parent="#accordion">
+                  <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordion">
                     <div class="faq-body">
-                      <p>Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has.
-                        Latine propriae quo no, unum ridens expetenda id sit, at usu eius eligendi singulis. Sea
-                        ocurreret principes ne. At nonumy aperiri pri, nam quodsi copiosae intellegebat et, ex deserunt
-                        euripidis usu. Per ad ullum lobortis. Duo volutpat imperdiet ut, postea salutatus imperdiet ut
-                        per, ad utinam debitis invenire has.<br></p>
+                      <p>Yes. Carebridge is optimized for both desktop and mobile browsers, making it easy to manage your healthcare needs from any device.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-item card">
+                  <div class="faq-header" id="heading7">
+                    <button class="faq-button collapsed" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                      <i class="fa fa-caret-right"></i>Is there any emergency support available?
+                    </button>
+                  </div>
+                  <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordion">
+                    <div class="faq-body">
+                      <p>While Carebridge is not an emergency service, our platform allows quick access to ambulance registration and contact details for immediate assistance during urgent situations.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-item card">
+                  <div class="faq-header" id="heading8">
+                    <button class="faq-button collapsed" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                      <i class="fa fa-caret-right"></i>What if I face a technical issue while using the platform?
+                    </button>
+                  </div>
+                  <div id="collapse8" class="collapse" aria-labelledby="heading8" data-parent="#accordion">
+                    <div class="faq-body">
+                      <p>Please contact our support team at support@Carebridge.com or call 963-612-1782. We're here to assist you with any technical difficulties you may face.</p>
                     </div>
                   </div>
                 </div>
@@ -144,17 +135,17 @@
         </div>
       </div>
     </div>
-    </div>
     <!--FAQ End-->
 
     <!--Footer-->
     <%- include('partial/footer.ejs'); %>
-    
+
+    <!-- Developed by students of UIT-RGPV, Bhopal, as a minor project to revolutionize healthcare access -->
+
     <script>
       var i = 0;
-      var txt = 'WELCOME TO MEDBUDDY';
+      var txt = 'WELCOME TO Carebridge';
       var speed = 60;
-
       function typeWriter() {
         if (i < txt.length) {
           document.getElementById("typeit").innerHTML += txt.charAt(i);
@@ -164,13 +155,12 @@
       }
     </script>
 
-      <!-- JavaScript -->
+    <!-- JavaScript -->
     <script defer src="assets/lib/js/jquery-3.4.1.min.js"></script>
     <script defer src="assets/lib/js/popper.min.js"></script>
     <script defer src="assets/lib/js/bootstrap.bundle.min.js"></script>
     <script defer src="assets/lib/js/all.min.js"></script>
     <script defer src="assets/lib/js/select2.full.min.js"></script>
     <script defer src="assets/js/about.js"></script>
-    
   </body>
 </html>

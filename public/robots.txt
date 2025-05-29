@@ -1,4 +1,4 @@
-Sitemap: https://medbuddy.onrender.com/sitemap.xml
+Sitemap: https://Carebridge.onrender.com/sitemap.xml
 User-agent: *
 Disallow: /patienthome/
 Disallow: /doctorhome/

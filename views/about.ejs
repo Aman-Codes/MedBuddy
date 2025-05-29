@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <!--Meta Data-->
     <%- include('partial/title.ejs'); %> 
@@ -8,8 +7,7 @@
     <% if (data.NODE_ENV == 'production') { %>
       <!-- Production Stylesheets -->
       <link rel="stylesheet" href="assets/production/css/about.min.css">
-
-    <% }else { %>
+    <% } else { %>
       <!-- Development Stylesheets -->
       <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">
       <link rel="stylesheet" href="assets/lib/css/fontawesome.min.css">
@@ -21,14 +19,12 @@
       <link rel="stylesheet" href="assets/lib/css/bootstrap-datepicker.min.css">
       <link rel="stylesheet" href="assets/lib/css/magnific-popup.css">
       <link rel="stylesheet" href="assets/css/header.css">
-      
     <% } %>
   </head>
 
   <body onLoad="typeWriter()">
     <!--Header-->
     <%- include('partial/header.ejs', {data: data }); %>
-    
 
     <!--About Start-->
     <div class="about-page pt_60 pb_30">
@@ -36,28 +32,29 @@
         <div class="row">
           <div class="col-md-12">
             <h3>Our Mission</h3>
-            <p>Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has. Latine
-              propriae quo no, unum ridens expetenda id sit, at usu eius eligendi singulis. Sea ocurreret principes
-              ne. At nonumy aperiri pri, nam quodsi copiosae intellegebat et, ex deserunt euripidis usu. Per ad ullum
-              lobortis. Duo volutpat imperdiet ut, postea salutatus imperdiet ut per, ad utinam debitis invenire
-              has.<br></p>
-            <p>Liber utroque vim an, ne his brute vivendo, est fabulas consetetur appellantur an. In dolore legendos
-              quo, ne ferri noluisse sed. Tantas eligendi at ius. Purto ipsum nemore sit ad.<br></p>
-            <p>Vix tale noluisse voluptua ad, ne brute altera democritum cum. Omnes ornatus qui et, te aeterno discere
-              ocurreret sea. Tollit cetero cu usu, etiam evertitur id nec. Id pro unum pertinax oportere, vel ad
-              ridens mollis. Ad ius meis suavitate voluptaria.</p>
+            <p>
+              At Carebridge, our mission is to transform the healthcare experience by making quality medical care accessible, affordable, and convenient for everyone. We are dedicated to breaking down the barriers that often complicate healthcare—whether they be logistical, financial, or informational. Through a robust, secure, and user-friendly digital platform, we connect patients with qualified healthcare professionals, enabling seamless appointment booking, real-time communication, and comprehensive management of personal health records.
+            </p>
+            <p>
+              We commit to fostering an environment of trust and transparency, where every user’s privacy and data security are paramount. By integrating innovative technologies and continuously adapting to the evolving needs of patients and providers, Carebridge empowers individuals to take charge of their health journeys confidently. Our platform prioritizes rapid response, personalized care, and patient satisfaction, ensuring that every interaction leads to better health outcomes and enhanced well-being.
+            </p>
+            <p>
+              Ultimately, our mission is to democratize healthcare—removing complexities and delays—so that smart, reliable, and compassionate medical services are within everyone’s reach, regardless of their background or location.
+            </p>
             <br>
             <h3>Our Vision</h3>
-            <p>Mei ut errem legimus periculis, eos liber epicurei necessitatibus eu, facilisi postulant vel no. Ad mea
-              commune disputando, cu vel choro exerci. Pri et oratio iisque atomorum, enim detracto mei ne, id eos
-              soleat iudicabit. Ne reque reformidans mei, rebum delicata consequuntur an sit. Sea ad audire utamur. Ut
-              mei ridens minimum intellegat, perpetua euripidis te qui, ad consul intellegebat comprehensam eum.</p>
-            <p>Ex vix alienum sadipscing, quod melius philosophia id has. Ad qui quem reprimique, quo possit detracto
-              reprimique no, sint reque officiis ei per. Ea regione commune volutpat pro, fabulas facilis omnesque mei
-              ne. Cu unum detracto comprehensam sea, ad vim ancillae principes, ex usu fugit consulatu. Vis te purto
-              equidem voluptatum.<br></p>
-            <p>Detracto contentiones te est, brute ipsum consul an vis. Mea ei regione blandit ullamcorper, definiebas
-              constituam vix ei. At his ludus nonumes gloriatur. Ne vim tamquam nonumes.<br></p>
+            <p>
+              Our vision at Carebridge is to be a pioneering force in the digital healthcare revolution, setting new benchmarks in how healthcare services are delivered, experienced, and perceived worldwide. We envision a future where healthcare is no longer reactive but proactive, where patients are empowered with comprehensive tools and insights to manage their health before illness strikes.
+            </p>
+            <p>
+              We aspire to build an integrated healthcare ecosystem that seamlessly connects patients, doctors, laboratories, and emergency services, creating a unified network focused on holistic health and wellness. Carebridge aims to eliminate disparities in healthcare accessibility by leveraging cutting-edge technologies such as AI-driven assistance, telemedicine, and secure health data interoperability.
+            </p>
+            <p>
+              By fostering collaboration among medical professionals and continuously enhancing our platform's capabilities, we strive to improve clinical outcomes and patient satisfaction on a global scale. Our commitment is to ensure that quality healthcare is not a privilege but a universally accessible right—making healthcare smarter, faster, and more compassionate for all.
+            </p>
+            <p>
+              Through innovation, integrity, and unwavering dedication, Carebridge will redefine the future of healthcare, enabling healthier lives and stronger communities across the world.
+            </p>
             <br>
           </div>
         </div>
@@ -68,9 +65,11 @@
     <!--Footer-->
     <%- include('partial/footer.ejs'); %>
 
+    <!-- Developed by students of UIT-RGPV, Bhopal, as a minor project to revolutionize healthcare access -->
+
     <script>
       var i = 0;
-      var txt = 'WELCOME TO MEDBUDDY';
+      var txt = 'WELCOME TO Carebridge';
       var speed = 60;
       function typeWriter() {
         if (i < txt.length) {
@@ -83,11 +82,10 @@
 
     <!-- JavaScript -->
     <script defer src="assets/lib/js/jquery-3.4.1.min.js"></script>
-    <script defer src="/assets/lib/js/popper.min.js"></script>
+    <script defer src="assets/lib/js/popper.min.js"></script>
     <script defer src="assets/lib/js/bootstrap.bundle.min.js"></script>
     <script defer src="assets/lib/js/all.min.js"></script>
     <script defer src="assets/lib/js/select2.full.min.js"></script>
     <script defer src="assets/js/about.js"></script>
-
   </body>
 </html>

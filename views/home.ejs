@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <!--Meta Data-->
-    <%- include('partial/title.ejs'); %>  
+    <%- include('partial/title.ejs'); %> 
 
     <% if (data.NODE_ENV == 'production') { %>
       <!-- Production Stylesheets -->
       <link rel="stylesheet" href="assets/production/css/home.min.css">
-
-    <% }else { %>
+    <% } else { %>
       <!-- Development Stylesheets -->
       <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">
       <link rel="stylesheet" href="assets/lib/css/fontawesome.min.css">
@@ -23,14 +21,23 @@
       <link rel="stylesheet" href="assets/lib/css/magnific-popup.css">
       <link rel="stylesheet" href="assets/css/home.css">
       <link rel="stylesheet" href="assets/css/header.css">
-      
     <% } %>
   </head>
 
   <body onLoad="typeWriter()">
-
     <!--Header-->
     <%- include('partial/header.ejs', {data: data }); %>
+
+    <!--Banner Start-->
+    <div class="banner-slider" style="background-image: url(/assets/images/banner.JPEG)">
+      <div class="bg"></div>
+      <div class="bannder-table">
+        <div class="banner-text">
+          <h1 id="typeit"> </h1>
+        </div>
+      </div>
+    </div>
+    <!--Banner End-->
 
     <!--About Start-->
     <div class="about-area pt_60 pb_90">
@@ -44,16 +51,13 @@
                 </h2>
               </div>
               <p>
-                Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has. Latine
-                propriae quo no, unum ridens expetenda id sit, at usu eius eligendi singulis. Sea ocurreret principes
-                ne.<br>
+                Carebridge is your trusted digital healthcare partner, committed to simplifying access to quality medical services. Designed for patients, doctors, and hospital staff, Carebridge bridges the gap between care and convenience.
               </p>
               <div class="progress-gallery main-prog">
                 <div class="bar-container">
                   <p>Neurology</p>
                   <div class="progress">
-                    <div class="progress-bar progress-bar-success progress-bar-custom" role="progressbar"
-                      aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+                    <div class="progress-bar progress-bar-success progress-bar-custom" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
                     </div>
                   </div>
                   <div class="percentage-show">95%</div>
@@ -61,8 +65,7 @@
                 <div class="bar-container">
                   <p>Dentistry</p>
                   <div class="progress">
-                    <div class="progress-bar progress-bar-success progress-bar-custom" role="progressbar"
-                      aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                    <div class="progress-bar progress-bar-success progress-bar-custom" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                     </div>
                   </div>
                   <div class="percentage-show">80%</div>
@@ -70,8 +73,7 @@
                 <div class="bar-container">
                   <p>Radiology</p>
                   <div class="progress">
-                    <div class="progress-bar progress-bar-success progress-bar-custom" role="progressbar"
-                      aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%">
+                    <div class="progress-bar progress-bar-success progress-bar-custom" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%">
                     </div>
                   </div>
                   <div class="percentage-show">88%</div>
@@ -79,8 +81,7 @@
                 <div class="bar-container">
                   <p>Cardiology</p>
                   <div class="progress">
-                    <div class="progress-bar progress-bar-success progress-bar-custom" role="progressbar"
-                      aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" style="width: 82%">
+                    <div class="progress-bar progress-bar-success progress-bar-custom" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" style="width: 82%">
                     </div>
                   </div>
                   <div class="percentage-show">82%</div>
@@ -105,7 +106,7 @@
           <div class="col-12">
             <div class="headline">
               <h2>WHY CHOOSE US</h2>
-              <h3>We have some special crieteria that will help you</h3>
+              <h3>We have some special criteria that will help you</h3>
             </div>
           </div>
         </div>
@@ -118,9 +119,7 @@
               <div class="choose-text">
                 <h4>QUICK RESPONSE</h4>
                 <p>
-                  Iisque persius ne sit, simul zril vix eu. Qui ne iusto epicuri suscipiantur, sit ne probo adhuc.
-                  Liber
-                  verterem interpretaris nam et, ea pro solum expetendis. 
+                  Carebridge ensures fast access to healthcare services—whether it's booking an appointment, contacting support, or receiving updates. We minimize wait times and prioritize immediate attention to your needs.
                 </p>
               </div>
             </div>
@@ -133,8 +132,7 @@
               <div class="choose-text">
                 <h4>100% SATISFACTION</h4>
                 <p>
-                  Duo luptatum delicata evertitur ad. Usu te quaerendum definitiones, ne mundi volutpat duo, in
-                  dissentias temporibus pri. Duo ferri dicant definitionem te. 
+                  We are committed to delivering a smooth and dependable healthcare experience. From login to consultation, every step is designed with your comfort and satisfaction in mind.
                 </p>
               </div>
             </div>
@@ -147,8 +145,7 @@
               <div class="choose-text">
                 <h4>QUALITY SERVICE</h4>
                 <p>
-                  Amet dolor oratio ex has, stet repudiare definiebas vim ne. Id probo facilisis usu, pri aliquam
-                  omnesque cu. Vide assentior id qui, quando possim eos. 
+                  Carebridge connects you with trusted doctors and services while maintaining high standards of care, accuracy, and privacy across the platform.
                 </p>
               </div>
             </div>
@@ -157,7 +154,6 @@
       </div>
     </div>
     <!--Choose-Area End-->
-
 
     <!--Feature-Area Start-->
     <div class="feature-area feature-two bg-area pt_90 pb_90">
@@ -180,7 +176,7 @@
               <div class="feature-text">
                 <h4>Planned Space Design</h4>
                 <p>
-                  Liber utroque vim an, ne his brute vivendo, est fabulas consetetur appellantur an in dolore. 
+                  Our facilities are designed for efficiency, ensuring a seamless experience for patients and healthcare providers.
                 </p>
               </div>
             </div>
@@ -194,7 +190,7 @@
               <div class="feature-text">
                 <h4>Good Medical Facilities</h4>
                 <p>
-                  Vix tale noluisse voluptua ad, ne brute altera democritum cum. Omnes ornatus qui et, te aeterno.
+                  Access to advanced medical equipment and skilled professionals for top-notch care.
                 </p>
               </div>
             </div>
@@ -208,7 +204,7 @@
               <div class="feature-text">
                 <h4>Best Ambulance Service</h4>
                 <p>
-                  Mei ut errem legimus periculis, eos liber epicurei necessitatibus eu, facilisi postulant vel no.
+                  Quick and reliable ambulance services for emergency situations, ensuring timely transport.
                 </p>
               </div>
             </div>
@@ -222,7 +218,7 @@
               <div class="feature-text">
                 <h4>Computerized Platform</h4>
                 <p>
-                  Ex vix alienum sadipscing, quod melius philosophia id has. Ad qui quem reprimique, quo possit. 
+                  A user-friendly digital platform for seamless appointment booking and health record management.
                 </p>
               </div>
             </div>
@@ -236,7 +232,7 @@
               <div class="feature-text">
                 <h4>Reduced Supervision</h4>
                 <p>
-                  Vis constituto complectitur an, modo falli eirmod ea has. Ex vis indoctum scriptorem appellantur.
+                  Streamlined processes to minimize oversight and enhance patient autonomy.
                 </p>
               </div>
             </div>
@@ -250,7 +246,7 @@
               <div class="feature-text">
                 <h4>Modern Technology</h4>
                 <p>
-                  Ancillae interpretaris ea has. Id amet impedit qui, eripuit mnesarchum percipitur in eam. 
+                  Leveraging AI and telemedicine to provide cutting-edge healthcare solutions.
                 </p>
               </div>
             </div>
@@ -259,7 +255,6 @@
       </div>
     </div>
     <!--Feature-Area End-->
-
 
     <!--Services Start-->
     <div class="services-area pt_90 pb_90">
@@ -281,8 +276,7 @@
               <div class="services-text">
                 <h3><a href="/view2">Newborn Care</a></h3>
                 <p>
-                  Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argum entum has. Latine
-                  propriae quo no unum. 
+                  Round-the-clock monitoring and care for newborns, led by experienced pediatricians.
                 </p>
                 <div class="button-bn">
                   <a href="/view2">Read More <i class="fa fa-chevron-circle-right"></i></a>
@@ -298,8 +292,7 @@
               <div class="services-text">
                 <h3><a href="/view2">Mother Care</a></h3>
                 <p>
-                  Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argum entum has. Latine
-                  propriae quo no unum. 
+                  Prenatal and postnatal health management designed for maternal well-being.
                 </p>
                 <div class="button-bn">
                   <a href="/view2">Read More <i class="fa fa-chevron-circle-right"></i></a>
@@ -315,8 +308,7 @@
               <div class="services-text">
                 <h3><a href="/view2">Critical Treatment</a></h3>
                 <p>
-                  Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argum entum has. Latine
-                  propriae quo no unum. 
+                  Immediate care for critical cases with access to ICU, surgery, and emergency specialists.
                 </p>
                 <div class="button-bn">
                   <a href="/view2">Read More <i class="fa fa-chevron-circle-right"></i></a>
@@ -332,8 +324,7 @@
               <div class="services-text">
                 <h3><a href="/view2">Modern Laboratory</a></h3>
                 <p>
-                  Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argum entum has. Latine
-                  propriae quo no unum. 
+                  Access modern, well-equipped labs for diagnostics with accurate and timely reports.
                 </p>
                 <div class="button-bn">
                   <a href="/view2">Read More <i class="fa fa-chevron-circle-right"></i></a>
@@ -349,8 +340,7 @@
               <div class="services-text">
                 <h3><a href="/view2">All Major Tests</a></h3>
                 <p>
-                  Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argum entum has. Latine
-                  propriae quo no unum. 
+                  Routine, advanced, and specialty medical tests under one roof.
                 </p>
                 <div class="button-bn">
                   <a href="/view2">Read More <i class="fa fa-chevron-circle-right"></i></a>
@@ -366,8 +356,7 @@
               <div class="services-text">
                 <h3><a href="/view2">Dental Care</a></h3>
                 <p>
-                  Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argum entum has. Latine
-                  propriae quo no unum. 
+                  Preventive and corrective dental procedures tailored to patient needs.
                 </p>
                 <div class="button-bn">
                   <a href="/view2">Read More <i class="fa fa-chevron-circle-right"></i></a>
@@ -389,10 +378,8 @@
               <!--TESTIMONIAL 1 -->
               <div class="item">
                 <div class="shadow-effect">
-                  <img class="img-circle" src="assets/images/pat1.JPEG" alt="uesr1">
-                  <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely
-                    synergize resource taxing relationships via premier niche markets. Professionally cultivate.
-                  </p>
+                  <img class="img-circle" src="assets/images/pat1.JPEG" alt="user1">
+                  <p>Carebridge made booking my appointments so easy! The platform is user-friendly, and I got a quick response from the support team when I needed help.</p>
                 </div>
                 <div class="testimonial-name">EMILIANO AQUILANI</div>
               </div>
@@ -402,9 +389,7 @@
               <div class="item">
                 <div class="shadow-effect">
                   <img class="img-circle" src="assets/images/pat2.JPEG" alt="user2">
-                  <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely
-                    synergize resource taxing relationships via premier niche markets. Professionally cultivate.
-                  </p>
+                  <p>The doctors on Carebridge are professional, and the platform ensures my health data is secure. I’m very satisfied with the service!</p>
                 </div>
                 <div class="testimonial-name">ANNA ITURBE</div>
               </div>
@@ -414,9 +399,7 @@
               <div class="item">
                 <div class="shadow-effect">
                   <img class="img-circle" src="assets/images/pat3.JPEG" alt="user3">
-                  <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely
-                    synergize resource taxing relationships via premier niche markets. Professionally cultivate.
-                  </p>
+                  <p>Carebridge’s ambulance service was a lifesaver during an emergency. Fast and reliable!</p>
                 </div>
                 <div class="testimonial-name">LARA ATKINSON</div>
               </div>
@@ -426,9 +409,7 @@
               <div class="item">
                 <div class="shadow-effect">
                   <img class="img-circle" src="assets/images/doc1.JPEG" alt="user4">
-                  <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely
-                    synergize resource taxing relationships via premier niche markets. Professionally cultivate.
-                  </p>
+                  <p>As a doctor, Carebridge’s dashboard helps me manage my appointments and patient records efficiently. Highly recommended!</p>
                 </div>
                 <div class="testimonial-name">IAN OWEN</div>
               </div>
@@ -438,9 +419,7 @@
               <div class="item">
                 <div class="shadow-effect">
                   <img class="img-circle" src="assets/images/doc2.JPEG" alt="user4">
-                  <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely
-                    synergize resource taxing relationships via premier niche markets. Professionally cultivate.
-                  </p>
+                  <p>The platform’s modern technology makes healthcare accessible and convenient. Great work by the Carebridge team!</p>
                 </div>
                 <div class="testimonial-name">MICHAEL TEDDY</div>
               </div>
@@ -455,9 +434,11 @@
     <!--Footer-->
     <%- include('partial/footer.ejs'); %>
     
+    <!-- Developed by students of UIT-RGPV, Bhopal, as a minor project to revolutionize healthcare access -->
+
     <script>
       var i = 0;
-      var txt = 'WELCOME TO MEDBUDDY';
+      var txt = 'WELCOME TO Carebridge';
       var speed = 60;
       function typeWriter() {
         if (i < txt.length) {
@@ -476,6 +457,5 @@
     <script defer src="assets/lib/js/all.min.js"></script>
     <script defer src="assets/lib/js/select2.full.min.js"></script>
     <script defer src="assets/js/home.js"></script>
-    
   </body>
 </html>

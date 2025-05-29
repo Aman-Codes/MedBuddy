@@ -1,5 +1,5 @@
 {
-  "name": "medbuddy",
+  "name": "Carebridge",
   "version": "1.0.0",
   "description": "A website which connects doctors, patients and services like ambulance provider",
   "main": "server.js",

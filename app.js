@@ -45,7 +45,7 @@ app.use(methodOverride('_method'));
 //  PASSPORT CONFIGURATION //
 app.use(
   session({
-    secret: 'Project MedBuddy is Awesome!',
+    secret: 'Project Carebridge is Awesome!',
     resave: false,
     saveUninitialized: false,
   })

@@ -1,4 +1,4 @@
-# Contributing to MedBuddy
+# Contributing to Carebridge
 
 :+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
 
@@ -13,25 +13,25 @@ We love your input! We want to make contributing to this project as easy and tra
 
 ### 1. Fork it :fork_and_knife:
 
-You can get your own fork/copy of [MedBuddy](https://github.com/Aman-Codes/MedBuddy) by using the <kbd><b>Fork</b></kbd></a> button.
+You can get your own fork/copy of [Carebridge](https://github.com/Aman-Codes/Carebridge) by using the <kbd><b>Fork</b></kbd></a> button.
 
-[![Fork Button](https://help.github.com/assets/images/help/repository/fork_button.jpg)](https://github.com/Aman-Codes/MedBuddy)
+[![Fork Button](https://help.github.com/assets/images/help/repository/fork_button.jpg)](https://github.com/Aman-Codes/Carebridge)
 
 ### 2. Clone it :busts_in_silhouette:
 
 You need to clone (download) it to local machine using
 
 ```sh
-git clone https://github.com/Your_Username/MedBuddy.git
+git clone https://github.com/Your_Username/Carebridge.git
 ```
 
 > This makes a local copy of repository in your machine.
 
-Once you have cloned the `MedBuddy` repository in GitHub, move to that folder first using change directory command.
+Once you have cloned the `Carebridge` repository in GitHub, move to that folder first using change directory command.
 
 ```sh
-# This will change directory to a folder MedBuddy
-cd MedBuddy
+# This will change directory to a folder Carebridge
+cd Carebridge
 ```
 
 Move to this folder for all other commands.
@@ -42,14 +42,14 @@ Run the following commands to see that _your local copy_ has a reference to _you
 
 ```sh
 git remote -v
-origin  https://github.com/Your_Username/MedBuddy.git (fetch)
-origin  https://github.com/Your_Username/MedBuddy.git (push)
+origin  https://github.com/Your_Username/Carebridge.git (fetch)
+origin  https://github.com/Your_Username/Carebridge.git (push)
 ```
 
-Now, add a reference to the original [MedBuddy](https://github.com/Aman-Codes/MedBuddy) repository using
+Now, add a reference to the original [Carebridge](https://github.com/Aman-Codes/Carebridge) repository using
 
 ```sh
-git remote add upstream https://github.com/Aman-Codes/MedBuddy.git
+git remote add upstream https://github.com/Aman-Codes/Carebridge.git
 ```
 
 > This adds a new remote named **_upstream_**.
@@ -58,10 +58,10 @@ See the changes using
 
 ```sh
 git remote -v
-origin    https://github.com/Your_Username/MedBuddy.git (fetch)
-origin    https://github.com/Your_Username/MedBuddy.git (push)
-upstream  https://github.com/Aman-Codes/MedBuddy.git (fetch)
-upstream  https://github.com/Aman-Codes/MedBuddy.git (push)
+origin    https://github.com/Your_Username/Carebridge.git (fetch)
+origin    https://github.com/Your_Username/Carebridge.git (push)
+upstream  https://github.com/Aman-Codes/Carebridge.git (fetch)
+upstream  https://github.com/Aman-Codes/Carebridge.git (push)
 ```
 
 ### 4. Sync it :recycle:
@@ -79,13 +79,13 @@ git checkout master
 # Reset local `master` branch to match `upstream` repository's `master` branch
 git reset --hard upstream/master
 
-# Push changes to your forked `MedBuddy` repo
+# Push changes to your forked `Carebridge` repo
 git push origin master
 ```
 
 ### 5. Ready Steady Go... :turtle: :rabbit2:
 
-Once you have completed these steps, you are ready to start contributing by checking our `Help Wanted` Issues and creating [pull requests](https://github.com/Aman-Codes/MedBuddy/pulls).
+Once you have completed these steps, you are ready to start contributing by checking our `Help Wanted` Issues and creating [pull requests](https://github.com/Aman-Codes/Carebridge/pulls).
 
 ### 6. Create a new branch :bangbang:
 
